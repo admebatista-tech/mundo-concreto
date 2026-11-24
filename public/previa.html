@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<script src="base.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia da landing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="landing.css">
+<style>
+  html, body { margin: 0; height: 100%; }
+  .lp.previa { position: static; inset: auto; width: 100%; height: 100vh; border-radius: 0; box-shadow: none; display: block; }
+  .lp.previa .lp-fechar { visibility: hidden; }
+</style>
+</head>
+<body>
+<div class="lp-fundo" id="lp-fundo" hidden></div>
+<div class="lp previa" id="lp"><p class="lp-dica">A prévia aparece aqui.</p></div>
+<script src="landing.js"></script>
+<script>
+  addEventListener('message', e => { if (e.origin === location.origin && e.data?.card) LPRender.mostrar(e.data.card, e.data.bloco); });
+  parent.postMessage({ previaPronta: true }, location.origin);
+</script>
+</body>
+</html>

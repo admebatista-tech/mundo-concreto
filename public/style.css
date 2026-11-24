@@ -1,0 +1,68 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--fg); font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* h-[300vh] py-40 overflow-hidden relative flex flex-col [perspective:1000px] [transform-style:preserve-3d] */
+.hp { height: 300vh; padding: 10rem 0 0; overflow: hidden; position: relative; display: flex; flex-direction: column; align-self: auto;
+  perspective: 1000px; transform-style: preserve-3d; }
+
+/* Header: max-w-7xl mx-auto py-20 md:py-40 px-4 w-full */
+.hp-header { max-width: 80rem; position: relative; margin: 0 auto; padding: 5rem 1rem; width: 100%; left: 0; top: 0; }
+.hp-titulo { font-size: 1.5rem; line-height: 2rem; font-weight: 700; margin: 0; }
+.hp-sub { max-width: 42rem; font-size: 1rem; line-height: 1.5rem; margin: 2rem 0 0; color: var(--muted); }
+@media (min-width: 768px) {
+  .hp-header { padding: 10rem 1rem; }
+  .hp-titulo { font-size: 4.5rem; line-height: 1; }
+  .hp-sub { font-size: 1.25rem; line-height: 1.75rem; }
+}
+
+.hp-palco { will-change: transform, opacity; }
+/* flex-row(-reverse) space-x-20 mb-20 */
+:root { --hp-gap: 2.5rem; --hp-cw: calc((100vw - 4 * var(--hp-gap)) / 3); }
+/* fila: 3 cards visíveis + cópias dos vizinhos nas pontas (deslocada para as cópias da esquerda ficarem fora da tela) */
+.hp-linha { display: flex; flex-direction: row; gap: var(--hp-gap); margin-bottom: var(--hp-gap); will-change: transform;
+  margin-left: calc(var(--hp-gap) - var(--sobra, 3) * (var(--hp-cw) + var(--hp-gap))); }
+.hp-linha:last-child { margin-bottom: 0; }
+.hp-reversa { flex-direction: row; }
+
+/* Card: h-96 w-[30rem] relative shrink-0, whileHover y:-20 */
+.hp-card { width: var(--hp-cw); aspect-ratio: 5 / 4; height: auto; position: relative; flex-shrink: 0; }
+.hp-card-in { position: absolute; inset: 0; transition: transform .35s cubic-bezier(.2,.9,.3,1.25); }
+.hp-card:hover .hp-card-in, .hp-card:focus-within .hp-card-in { transform: translateY(-20px); }
+.hp-card a { display: block; position: absolute; inset: 0; transition: box-shadow .3s; }
+.hp-card:hover a, .hp-card:focus-within a { box-shadow: 0 25px 50px -12px rgba(0,0,0,.25); }
+.hp-card a > img { object-fit: cover; object-position: left top; position: absolute; height: 100%; width: 100%; inset: 0; display: block; }
+.hp-veu { position: absolute; inset: 0; height: 100%; width: 100%; opacity: 0; background: #000; pointer-events: none; transition: opacity .2s; }
+.hp-card:hover .hp-veu, .hp-card:focus-within .hp-veu { opacity: .8; }
+.hp-card h2 { position: absolute; bottom: 1rem; left: 1rem; margin: 0; opacity: 0; color: #fff; font-size: 1.5rem; line-height: 2rem; font-weight: 700; pointer-events: none; transition: opacity .2s; }
+.hp-card:hover h2, .hp-card:focus-within h2 { opacity: 1; }
+.hp-card a:focus-visible { outline-offset: 6px; }
+
+/* Animações reduzidas: vitrine parada, cards em grade */
+:root[data-motion="reduce"] .hp { height: auto; perspective: none; }
+:root[data-motion="reduce"] .hp-palco { transform: none !important; opacity: 1 !important; padding: 0 1rem; }
+:root[data-motion="reduce"] .hp-linha { flex-wrap: wrap; justify-content: center; gap: 2rem; margin: 0 0 2rem; flex-direction: row; transform: none !important; }
+:root[data-motion="reduce"] .hp-copia { display: none; }
+:root[data-motion="reduce"] .hp-card { transform: none !important; width: min(30rem, 100%); height: auto; aspect-ratio: 5 / 4; }
+
+.hp-vazio { text-align: center; color: var(--muted); padding: 4rem 1rem; }
+
+/* Frase ocupa só até o meio da página (metade esquerda) */
+@media (min-width: 768px) {
+  .hp-header { max-width: none; margin: 0; padding-left: max(1rem, calc((100vw - 80rem) / 2 + 1rem)); padding-right: 50vw; }
+  .hp-titulo { font-size: min(4.5rem, 4.2vw); line-height: 1.05; }
+  .hp-sub { max-width: none; }
+}
+
+/* Logo abaixo do título (imagem com fundo transparente) */
+.hp-logo { display: block; height: auto; width: min(100%, 2.6em * 788 / 340 * 1.5); margin-top: .18em; }
+:root[data-theme="dark"] .hp-logo { filter: brightness(0) invert(.92); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hp-logo { filter: brightness(0) invert(.92); } }
+:root[data-contrast="high"] .hp-logo { filter: brightness(0) invert(1); }
+:root[data-contrast="high"][data-theme="light"] .hp-logo { filter: brightness(0); }
+
+/* Celular: 2 cards por fila, maiores */
+@media (max-width: 767px) {
+  :root { --hp-gap: .9rem; --hp-cw: calc((100vw - 3 * var(--hp-gap)) / 2); }
+}

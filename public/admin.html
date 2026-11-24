@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<script src="base.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin · MUNDO CONCRETO</title>
+<link rel="stylesheet" href="a11y.css">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="card-render.css">
+<script src="a11y.js"></script>
+</head>
+<body class="adm">
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<aside class="lateral" aria-label="Menu do admin">
+  <div class="lat-marca">
+    <img src="/mc/marca/logo-mundo-concreto-horizontal.png" alt="">
+    <div><strong>MUNDO CONCRETO</strong><span>Admin</span></div>
+  </div>
+  <nav class="lat-nav">
+    <p class="lat-grupo">Site</p>
+    <button type="button" class="lat-item" data-vista="topo">Textos do topo</button>
+    <button type="button" class="lat-item" data-vista="ordem">Organizar cards</button>
+    <div class="lat-grupo lat-grupo-cards"><span>Cards e landing pages</span><button type="button" class="lat-novo" id="btn-novo" aria-label="Novo card">+ Novo</button></div>
+    <ul class="lat-cards" id="menu-cards"></ul>
+    <p class="lat-grupo">Diagnóstico empresarial</p>
+    <button type="button" class="lat-item" data-vista="diagnosticos">Diagnósticos recebidos <small id="n-diag"></small></button>
+    <a class="lat-item" href="/diagnostico/" target="_blank" rel="noopener">Abrir o questionário ↗</a>
+  </nav>
+  <div class="lat-rodape">
+    <a class="lat-item" href="/" target="_blank" rel="noopener">Ver site ↗</a>
+    <button type="button" class="lat-item" data-vista="conta">Alterar senha</button>
+    <button type="button" class="lat-item" id="btn-sair">Sair <small id="quem"></small></button>
+  </div>
+</aside>
+
+<main id="conteudo" tabindex="-1">
+
+  <!-- TEXTOS DO TOPO -->
+  <section class="vista" id="vista-topo" hidden aria-labelledby="t-topo">
+    <header class="vista-cab"><div><p class="vista-tag">Site</p><h1 id="t-topo">Textos do topo</h1><p class="dica">O título, o logo e o subtítulo que aparecem no alto da página, ao lado da constelação.</p></div></header>
+    <form id="form-site" class="painel grade-campos">
+      <label>Título <small>(use &lt;br&gt; para quebrar a linha)</small><input name="title" required maxlength="200"></label>
+      <label>Imagem abaixo do título <small>(logo com fundo transparente; vazio = sem imagem)</small>
+        <span class="linha-logo"><input name="logo" maxlength="1000" placeholder="/marca/mundo-concreto.png"><button class="btn btn-sec" type="button" id="btn-logo">Enviar imagem</button></span></label>
+      <label>Texto alternativo da imagem <small>(o que a imagem diz, para leitores de tela)</small><input name="logoAlt" maxlength="200" placeholder="Mundo Concreto"></label>
+      <img id="previa-logo" class="previa-logo" alt="Prévia da imagem abaixo do título" hidden>
+      <label>Subtítulo<textarea name="subtitle" rows="3" maxlength="600"></textarea></label>
+      <div class="acoes"><button class="btn" type="submit">Salvar textos do topo</button></div>
+    </form>
+  </section>
+
+  <!-- ORGANIZAR CARDS -->
+  <section class="vista" id="vista-ordem" hidden aria-labelledby="t-ordem">
+    <header class="vista-cab"><div><p class="vista-tag">Cards</p><h1 id="t-ordem">Organizar cards <span id="contagem" class="tag"></span></h1>
+      <p class="dica">Arraste para mudar a ordem (ou use as setas). Os cards aparecem no site em filas de 3, da esquerda para a direita.</p></div></header>
+    <ol id="lista" class="lista"></ol>
+  </section>
+
+  <!-- DIAGNÓSTICOS -->
+  <section class="vista" id="vista-diagnosticos" hidden aria-labelledby="t-diag">
+    <header class="vista-cab"><div><p class="vista-tag">Diagnóstico empresarial</p><h1 id="t-diag">Diagnósticos recebidos</h1>
+      <p class="dica">Cada diagnóstico concluído no questionário (<a href="/diagnostico/" target="_blank" rel="noopener">/diagnostico/</a>) fica salvo aqui, com o cadastro, o resultado e o PDF.</p></div></header>
+    <div class="diag-grade">
+      <div class="painel diag-lista-p"><ol class="diag-lista" id="diag-lista"></ol></div>
+      <div class="painel diag-det" id="diag-det"><p class="dica">Escolha um diagnóstico na lista.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTA -->
+  <section class="vista" id="vista-conta" hidden aria-labelledby="t-conta">
+    <header class="vista-cab"><div><p class="vista-tag">Conta</p><h1 id="t-conta">Alterar senha</h1>
+      <p class="dica">Troca a senha do usuário que está conectado. Os outros acessos abertos com este usuário são desconectados.</p></div></header>
+    <form id="form-senha" class="painel grade-campos" style="max-width:30rem" novalidate>
+      <label>Senha atual<input name="atual" type="password" autocomplete="current-password" required></label>
+      <label>Nova senha <small>(mínimo 8 caracteres)</small><input name="nova" type="password" autocomplete="new-password" minlength="8" required></label>
+      <label>Repita a nova senha<input name="repete" type="password" autocomplete="new-password" required></label>
+      <p class="erro" id="erro-senha" role="alert"></p>
+      <div class="acoes"><button class="btn" type="submit">Salvar nova senha</button></div>
+    </form>
+  </section>
+
+  <!-- EDITAR CARD + LANDING -->
+  <section class="vista" id="vista-card" hidden aria-labelledby="t-card">
+    <header class="vista-cab barra-salvar">
+      <div><p class="vista-tag" id="card-pos">Card</p><h1 id="t-card">Novo card</h1><p class="estado" id="estado" aria-live="polite"></p></div>
+      <div class="acoes">
+        <a class="btn btn-sec" id="btn-ver" href="/" target="_blank" rel="noopener">Ver no site ↗</a>
+        <button class="btn btn-sec" type="button" id="btn-descartar">Descartar alterações</button>
+        <button class="btn" type="button" id="btn-salvar">Salvar card e landing</button>
+      </div>
+    </header>
+
+    <!-- 1. CARD -->
+    <section class="painel" id="ed-card" aria-labelledby="t-ed-card">
+      <h2 id="t-ed-card"><span class="passo">1</span> Card <small>fundo + textos editáveis, como aparece na vitrine</small></h2>
+      <form id="form-card" class="card-ed" novalidate>
+        <div class="card-palco">
+          <div class="card-vivo" id="card-vivo">
+            <div id="card-render"></div>
+            <label class="card-img" id="zona" tabindex="0" aria-label="Trocar o fundo do card: clique ou arraste uma imagem">
+              <input type="file" id="arquivo" accept="image/png,image/jpeg,image/webp,image/gif,image/avif,image/svg+xml" class="sr-only">
+              <span class="card-img-dica">Trocar o fundo<br><small>clique ou arraste · 5:4</small></span>
+            </label>
+          </div>
+          <p class="dica">Prévia do card como na vitrine. Clique num texto da prévia para ir ao campo dele; clique no fundo para trocar a imagem.</p>
+        </div>
+        <div class="card-campos">
+          <label>Nome do card <small>(aparece no menu e no topo da landing)</small><input name="title" required maxlength="120" placeholder="Ex.: Consultorias"></label>
+          <label class="check"><input type="checkbox" name="active" checked> Mostrar este card no site</label>
+          <fieldset class="cq"><legend>Fundo e cores</legend>
+            <label class="largo">Imagem do fundo <small>(só o fundo, sem textos)</small><span class="linha-logo"><input name="thumbnail" maxlength="1000" placeholder="/cards/fundo-01.svg"><button type="button" class="btn btn-sec" data-enviar="thumbnail">Enviar</button></span></label>
+            <label>Cor de destaque <small>(botão, sigla, números)</small><span class="linha-cor"><input type="color" data-cor="v_destaque" aria-label="Escolher cor de destaque"><input name="v_destaque" maxlength="30"></span></label>
+            <label>Cor do texto<span class="linha-cor"><input type="color" data-cor="v_corTexto" aria-label="Escolher cor do texto"><input name="v_corTexto" maxlength="30"></span></label>
+            <label class="largo">Cor das caixas <small>(menu e quadros; ex.: rgba(255,255,255,.12))</small><input name="v_suave" maxlength="30"></label>
+          </fieldset>
+          <fieldset class="cq"><legend>Textos do card</legend>
+            <label>Sigla do canto<input name="v_sigla" maxlength="4" placeholder="MC"></label>
+            <label>Nome no canto<input name="v_canto" maxlength="80" placeholder="01 · Início"></label>
+            <label class="largo">Menu <small>(itens separados por vírgula)</small><input name="v_menu" maxlength="200"></label>
+            <label class="largo">Título<textarea name="v_titulo" rows="2" maxlength="200"></textarea></label>
+            <label class="largo">Texto<textarea name="v_texto" rows="2" maxlength="400"></textarea></label>
+            <label>Botão 1<input name="v_botao1" maxlength="50"></label>
+            <label>Botão 2<input name="v_botao2" maxlength="50"></label>
+            <label>Rodapé<input name="v_rodape" maxlength="60"></label>
+          </fieldset>
+          <fieldset class="cq"><legend>Quadro 1</legend>
+            <label>Tipo<select name="m0_tipo"><option value="foto">Foto</option><option value="numero">Número</option><option value="icone">Ícone com sigla</option><option value="logo">Logo</option><option value="logos">Vários logos</option><option value="texto">Só texto</option></select></label>
+            <label>Título<input name="m0_titulo" maxlength="120"></label>
+            <label class="largo">Texto<textarea name="m0_texto" rows="2" maxlength="300"></textarea></label>
+            <label data-so="numero icone">Número ou sigla<input name="m0_destaque" maxlength="30" placeholder="1.000+ ou W"></label>
+            <label data-so="foto logo" class="largo">Imagem<span class="linha-logo"><input name="m0_img" maxlength="1000" placeholder="/mc/fotos/…"><button type="button" class="btn btn-sec" data-enviar="m0_img">Enviar</button></span></label>
+            <label data-so="foto">Ajuste da foto<select name="m0_ajuste"><option value="cobrir">Preencher</option><option value="topo">Preencher, alinhada no topo</option><option value="inteira">Foto inteira</option></select></label>
+            <label data-so="logo">Fundo do logo<input name="m0_fundo" maxlength="30" placeholder="#ffffff"></label>
+            <label data-so="logos" class="largo">Logos <small>(endereços separados por vírgula)</small><input name="m0_imgs" maxlength="3000"></label>
+          </fieldset>
+          <fieldset class="cq"><legend>Quadro 2</legend>
+            <label>Tipo<select name="m1_tipo"><option value="foto">Foto</option><option value="numero">Número</option><option value="icone">Ícone com sigla</option><option value="logo">Logo</option><option value="logos">Vários logos</option><option value="texto">Só texto</option></select></label>
+            <label>Título<input name="m1_titulo" maxlength="120"></label>
+            <label class="largo">Texto<textarea name="m1_texto" rows="2" maxlength="300"></textarea></label>
+            <label data-so="numero icone">Número ou sigla<input name="m1_destaque" maxlength="30" placeholder="1.000+ ou W"></label>
+            <label data-so="foto logo" class="largo">Imagem<span class="linha-logo"><input name="m1_img" maxlength="1000" placeholder="/mc/fotos/…"><button type="button" class="btn btn-sec" data-enviar="m1_img">Enviar</button></span></label>
+            <label data-so="foto">Ajuste da foto<select name="m1_ajuste"><option value="cobrir">Preencher</option><option value="topo">Preencher, alinhada no topo</option><option value="inteira">Foto inteira</option></select></label>
+            <label data-so="logo">Fundo do logo<input name="m1_fundo" maxlength="30" placeholder="#ffffff"></label>
+            <label data-so="logos" class="largo">Logos <small>(endereços separados por vírgula)</small><input name="m1_imgs" maxlength="3000"></label>
+          </fieldset>
+          <fieldset class="cq"><legend>Quadro 3</legend>
+            <label>Tipo<select name="m2_tipo"><option value="foto">Foto</option><option value="numero">Número</option><option value="icone">Ícone com sigla</option><option value="logo">Logo</option><option value="logos">Vários logos</option><option value="texto">Só texto</option></select></label>
+            <label>Título<input name="m2_titulo" maxlength="120"></label>
+            <label class="largo">Texto<textarea name="m2_texto" rows="2" maxlength="300"></textarea></label>
+            <label data-so="numero icone">Número ou sigla<input name="m2_destaque" maxlength="30" placeholder="1.000+ ou W"></label>
+            <label data-so="foto logo" class="largo">Imagem<span class="linha-logo"><input name="m2_img" maxlength="1000" placeholder="/mc/fotos/…"><button type="button" class="btn btn-sec" data-enviar="m2_img">Enviar</button></span></label>
+            <label data-so="foto">Ajuste da foto<select name="m2_ajuste"><option value="cobrir">Preencher</option><option value="topo">Preencher, alinhada no topo</option><option value="inteira">Foto inteira</option></select></label>
+            <label data-so="logo">Fundo do logo<input name="m2_fundo" maxlength="30" placeholder="#ffffff"></label>
+            <label data-so="logos" class="largo">Logos <small>(endereços separados por vírgula)</small><input name="m2_imgs" maxlength="3000"></label>
+          </fieldset>
+          <fieldset class="cq"><legend>Endereço e link</legend>
+            <label>Endereço da landing <small>(slug; vazio = gerado pelo nome)</small><input name="slug" maxlength="60" placeholder="ex.: consultorias"></label>
+            <label>Link do card <small>(só com a landing desligada)</small><input name="link" maxlength="500" placeholder="https://… ou #"></label>
+          </fieldset>
+          <button type="button" class="btn btn-perigo" id="btn-excluir" hidden>Excluir este card</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- 2. LANDING PAGE -->
+    <section class="painel" id="ed-lp" aria-labelledby="t-ed-lp">
+      <h2 id="t-ed-lp"><span class="passo">2</span> Landing page do card <small>abre ao clicar no card. A prévia ao lado acompanha o que você edita.</small></h2>
+      <div class="lp-ed">
+        <div id="lp-editor"></div>
+        <div class="lp-previa">
+          <div class="lp-previa-barra"><span>Prévia ao vivo</span>
+            <span class="lp-previa-tam" role="group" aria-label="Tamanho da prévia">
+              <button type="button" data-tam="pc" aria-pressed="true">Computador</button><button type="button" data-tam="cel" aria-pressed="false">Celular</button>
+            </span></div>
+          <div class="lp-previa-janela" id="previa-janela"><iframe id="previa-lp" src="previa.html" title="Prévia da landing page"></iframe></div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+
+<dialog id="dlg-sujo" aria-labelledby="dlg-t">
+  <h2 id="dlg-t">Há alterações não salvas</h2>
+  <p>Você mudou este card e ainda não salvou.</p>
+  <div class="acoes"><button class="btn" value="salvar" type="button">Salvar e continuar</button><button class="btn btn-sec" value="descartar" type="button">Descartar</button><button class="btn btn-sec" value="voltar" type="button">Voltar</button></div>
+</dialog>
+<div id="aviso" class="aviso" role="status" aria-live="polite"></div>
+<script src="card-render.js"></script>
+<script src="admin-landing.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

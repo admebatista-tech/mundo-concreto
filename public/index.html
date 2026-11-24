@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<script src="base.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Parallax</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="a11y.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="card-render.css">
+<link rel="stylesheet" href="constelacao.css">
+<link rel="stylesheet" href="landing.css">
+<script src="a11y.js"></script>
+</head>
+<body>
+<a class="pular" href="#fim">Pular para o fim da vitrine</a>
+<main>
+  <section id="parallax" class="hp" aria-labelledby="hp-titulo">
+    <div class="hp-topo">
+      <header class="hp-header">
+        <h1 id="hp-titulo" class="hp-titulo"></h1>
+        <p class="hp-sub"></p>
+      </header>
+      <div class="hp-const" id="constelacao" role="group" aria-label="Mapa das áreas da Mundo Concreto: obra, projeto e gestão."></div>
+    </div>
+    <div class="hp-palco" id="palco">
+    </div>
+  </section>
+  <div id="fim" tabindex="-1" class="sr-only">Fim da vitrine</div>
+</main>
+<div class="lp-fundo" id="lp-fundo" hidden></div>
+<div class="lp" id="lp" role="dialog" aria-modal="true" aria-labelledby="lp-titulo" hidden tabindex="-1"></div>
+<script src="card-render.js"></script>
+<script src="parallax.js"></script>
+<script src="constelacao.js"></script>
+<script src="landing.js"></script>
+</body>
+</html>

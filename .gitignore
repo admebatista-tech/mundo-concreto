@@ -1,0 +1,13 @@
+# dados que mudam no servidor (nunca versionar: cards editados, senhas, diagnósticos)
+data/
+dados/
+public/uploads/*
+!public/uploads/.htaccess
+# cópias de segurança e registros
+public.bak-*/
+*.bak*
+server.log
+.DS_Store
+node_modules/
+# placeholders antigos, não usados
+public/seed/

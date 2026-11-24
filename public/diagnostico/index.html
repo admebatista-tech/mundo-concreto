@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- =====================================================================
+     DIAGNÓSTICO GRATUITO · Mundo Concreto · www.mundoconcreto.net
+     Página separada da home. Funciona sozinha: cadastro → áreas de
+     interesse → questionário (171 perguntas, 12 áreas) → painel → PDF
+     enviado por e-mail.
+
+     O QUE VOCÊ PODE MUDAR fica só no bloco DIAG_CONFIG, logo abaixo do
+     título "CONFIGURAÇÃO". As perguntas ficam no arquivo
+     assets/diagnostico/questoes.js.
+     ===================================================================== -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico gratuito para fábricas de concreto · Mundo Concreto</title>
+<meta name="description" content="Diagnóstico gratuito para fábricas de blocos, pisos intertravados, tubos e pré-moldados de concreto: escolha as áreas, veja o painel na hora e receba o PDF com o plano de ação e a prontidão para o Selo ABCP.">
+<link rel="canonical" href="https://www.mundoconcreto.net/diagnostico.html">
+<meta name="theme-color" content="#445057">
+<link rel="icon" type="image/png" href="assets/marca/favicon.png">
+<link rel="apple-touch-icon" href="assets/marca/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Diagnóstico gratuito para fábricas de concreto · Mundo Concreto">
+<meta property="og:description" content="Escolha as áreas, veja o painel na hora e baixe o PDF com o plano de ação.">
+<meta property="og:image" content="https://www.mundoconcreto.net/assets/marca/og-imagem.jpg">
+<link rel="preload" href="assets/fontes/montserrat-400.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Krona One";src:url("assets/fontes/krona-one-400.woff2") format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Horizon";src:url("assets/fontes/horizon.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("assets/fontes/montserrat-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("assets/fontes/montserrat-600.woff2") format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("assets/fontes/montserrat-700.woff2") format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Montserrat";src:url("assets/fontes/montserrat-800.woff2") format("woff2");font-weight:800 900;font-display:swap}
+:root{
+  --ardosia:#445057;--grafite:#2E373C;--nevoa:#DFDCE3;--nevoa-clara:#F3F2F5;--verde-agua:#4ABDAB;--verde-texto:#1C7568;
+  --amarelo:#F7B733;--laranja:#FC4A1A;--laranja-texto:#B5340C;--azul:#4B98B2;--azul-texto:#2A6F87;
+  --texto:#2E373C;--suave:#56636B;--linha:#D9D6DE;--branco:#fff;
+  --critico:#C0392B;--desenv:#8A5A00;--bom:#1C7568;--excelente:#2A6F87;
+  --titulo:"Horizon","Krona One","Montserrat",system-ui,sans-serif;--fonte:"Montserrat","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font-family:var(--fonte);font-size:16px;line-height:1.5;color:var(--texto);background:var(--nevoa-clara)}
+img{max-width:100%;height:auto}
+a{color:var(--azul-texto)}
+:focus-visible{outline:3px solid var(--azul);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.pular{position:absolute;left:-999px;top:0;background:#fff;padding:8px 12px;z-index:99}
+.pular:focus{left:8px}
+h1,h2{font-family:var(--titulo);text-transform:uppercase;color:var(--ardosia);line-height:1.15;margin:0 0 .4em}
+h1{font-size:clamp(22px,3vw,34px)}
+h2{font-size:clamp(17px,2vw,22px)}
+h3{font-size:17px;margin:0 0 .3em;color:var(--ardosia)}
+p{margin:0 0 .7em}
+.tag{display:inline-block;font-size:13px;font-weight:700;color:var(--laranja-texto);margin-bottom:4px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid transparent;border-radius:8px;padding:11px 18px;font:inherit;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;line-height:1.2}
+.btn-amarelo{background:var(--amarelo);color:var(--grafite)}
+.btn-amarelo:hover{background:#F9C55A}
+.btn-ardosia{background:var(--ardosia);color:#fff}
+.btn-ardosia:hover{background:var(--grafite)}
+.btn-contorno{border-color:var(--ardosia);color:var(--ardosia);background:transparent}
+.btn-contorno:hover{background:#fff}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.acoes{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+
+/* topo */
+.topo{background:#fff;border-bottom:1px solid var(--linha);position:sticky;top:0;z-index:20}
+.topo .wrap:first-child{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:66px}
+.topo img{height:48px;width:auto;display:block}
+.topo nav{display:flex;gap:8px;flex-wrap:wrap}
+.topo nav a{font-size:14px;font-weight:600;text-decoration:none;color:var(--ardosia);padding:8px 10px;border-radius:6px}
+.topo nav a:hover{background:var(--nevoa-clara)}
+.etapas{display:flex;gap:6px;list-style:none;margin:0;padding:10px 0 0}
+.etapas li{flex:1;font-size:13px;font-weight:600;color:var(--suave);border-top:4px solid var(--nevoa);padding-top:6px}
+.etapas li.ativa{color:var(--ardosia);border-color:var(--amarelo)}
+.etapas li.feita{color:var(--verde-texto);border-color:var(--verde-agua)}
+
+main{padding:22px 0 48px}
+.cartao{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:clamp(16px,2.6vw,28px)}
+.intro{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start;margin-bottom:18px}
+.intro ul{margin:0;padding-left:18px;font-size:15px}
+.intro aside{background:var(--ardosia);color:#fff;border-radius:14px;padding:18px}
+.intro aside b{color:var(--amarelo)}
+.intro aside p{margin:0 0 8px;font-size:14.5px}
+@media (max-width:860px){.intro{grid-template-columns:1fr}}
+
+/* formulário de cadastro */
+.grade{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 16px}
+.campo{display:grid;gap:4px}
+.campo.largo{grid-column:1/-1}
+label,.rotulo{font-size:14px;font-weight:700;color:var(--ardosia)}
+.opc{font-weight:400;color:var(--suave)}
+input[type=text],input[type=email],input[type=tel],select,textarea{font:inherit;font-size:16px;color:var(--texto);background:#fff;border:1px solid #B9B5C0;border-radius:8px;padding:10px 12px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--azul);outline-offset:1px;border-color:var(--azul)}
+.tel{display:flex;gap:8px}
+.tel select{max-width:46%}
+.ajuda{font-size:13px;color:var(--suave)}
+.erro-campo{font-size:13px;color:var(--critico);min-height:0}
+[aria-invalid="true"]{border-color:var(--critico)!important}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.produtos{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.produtos fieldset{background:var(--nevoa-clara);border-radius:10px;padding:10px 12px}
+.produtos legend{font-weight:700;font-size:14px;color:var(--ardosia);padding:0;margin-bottom:6px;float:left;width:100%}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;font-weight:500;color:var(--texto);margin:3px 0;clear:both}
+.chk input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--ardosia)}
+@media (max-width:860px){.produtos{grid-template-columns:1fr 1fr}.grade{grid-template-columns:1fr}}
+@media (max-width:480px){.produtos{grid-template-columns:1fr}}
+.isca{position:absolute;left:-5000px;width:1px;height:1px;overflow:hidden}
+.aviso{border-radius:10px;padding:10px 14px;font-size:14.5px;margin:12px 0 0}
+.aviso.info{background:#E8F3F6;color:#1F4F60}
+.aviso.erro{background:#FBEAE7;color:#8A2416}
+.aviso.ok{background:#E3F4EF;color:#145A50}
+.aviso:empty{display:none}
+
+/* questionário */
+.quest{display:grid;grid-template-columns:270px 1fr;gap:18px;align-items:start}
+.lado{position:sticky;top:132px;background:#fff;border:1px solid var(--linha);border-radius:14px;padding:12px}
+.lado ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.lado button{width:100%;display:grid;grid-template-columns:1fr auto;gap:2px 8px;align-items:center;text-align:left;font:inherit;font-size:14px;border:0;background:none;border-radius:8px;padding:7px 8px;cursor:pointer;color:var(--texto)}
+.lado button:hover{background:var(--nevoa-clara)}
+.lado button[aria-current="step"]{background:var(--ardosia);color:#fff}
+.lado .mini{grid-column:1/-1;height:4px;border-radius:3px;background:var(--nevoa);overflow:hidden}
+.lado .mini i{display:block;height:100%;background:var(--verde-agua);width:var(--p,0%)}
+.lado small{font-size:12px;opacity:.85}
+.geral{margin:0 0 10px;font-size:13px;color:var(--suave)}
+.geral .barra{height:8px;border-radius:5px;background:var(--nevoa);overflow:hidden;margin-top:4px}
+.geral .barra i{display:block;height:100%;background:var(--amarelo);width:var(--p,0%)}
+.area-cab{display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap;margin-bottom:8px}
+.escala{font-size:13px;color:var(--suave);background:var(--nevoa-clara);border-radius:10px;padding:8px 12px;margin-bottom:12px}
+.escala summary{cursor:pointer;font-weight:700;color:var(--ardosia)}
+.escala ol{margin:6px 0 0;padding-left:20px;columns:2;column-gap:24px}
+.tema{margin:16px 0 6px;font-size:14px;font-weight:800;color:var(--azul-texto);text-transform:uppercase;letter-spacing:.03em}
+.perg{border-top:1px solid var(--linha);padding:10px 0}
+.perg legend{font-size:15px;font-weight:600;color:var(--texto);padding:0;margin-bottom:6px;float:left;width:100%}
+.perg legend b{color:var(--suave);font-weight:700;margin-right:6px}
+.notas{display:flex;flex-wrap:wrap;gap:4px;clear:both}
+.notas label{position:relative;font-weight:700;font-size:14px;color:var(--ardosia)}
+.notas input{position:absolute;opacity:0;width:1px;height:1px}
+.notas span{display:grid;place-items:center;min-width:38px;height:36px;padding:0 8px;border:1px solid #B9B5C0;border-radius:8px;background:#fff;cursor:pointer;user-select:none}
+.notas label:hover span{border-color:var(--ardosia)}
+.notas input:focus-visible+span{outline:3px solid var(--azul);outline-offset:2px}
+.notas input:checked+span{background:var(--ardosia);border-color:var(--ardosia);color:#fff}
+.notas .na span{min-width:54px}
+.notas .na input:checked+span{background:var(--suave);border-color:var(--suave)}
+.perg.pendente legend b{color:var(--laranja-texto)}
+.nav-area{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:16px;border-top:1px solid var(--linha);padding-top:14px}
+@media (max-width:900px){.quest{grid-template-columns:1fr}.lado{position:static}.lado ol{grid-template-columns:1fr 1fr}.escala ol{columns:1}}
+
+/* resultado */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0 16px}
+.kpi{background:#fff;border:1px solid var(--linha);border-top:4px solid var(--cor,var(--ardosia));border-radius:12px;padding:12px 14px}
+.kpi span{display:block;font-size:12.5px;font-weight:700;color:var(--suave);text-transform:uppercase;letter-spacing:.03em}
+.kpi strong{display:block;font-family:var(--titulo);font-size:clamp(20px,2.4vw,28px);color:var(--ardosia);line-height:1.2;margin:4px 0 2px}
+.kpi small{font-size:13px;color:var(--suave)}
+.kpi strong.longo{font-family:var(--fonte);font-weight:800;font-size:clamp(17px,1.6vw,20px)}
+.painel{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.bars li{display:grid;grid-template-columns:210px 1fr 52px;gap:10px;align-items:center;font-size:14px}
+.bars .trilho{height:14px;border-radius:7px;background:var(--nevoa);overflow:hidden}
+.bars .trilho i{display:block;height:100%;width:var(--v);background:var(--c)}
+.bars b{text-align:right}
+.bars .sem{color:var(--suave);font-weight:500}
+.radar svg{width:100%;height:auto;display:block}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--suave);margin-top:8px}
+.legenda span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:6px;vertical-align:-1px}
+.plano{counter-reset:pl;list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.plano li{display:grid;grid-template-columns:34px 1fr auto;gap:4px 12px;align-items:start;border:1px solid var(--linha);border-radius:10px;padding:10px 12px;background:#fff}
+.plano li::before{counter-increment:pl;content:counter(pl);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--amarelo);font-weight:800;color:var(--grafite)}
+.plano h3{font-size:15px;margin:0}
+.plano p{margin:2px 0 0;font-size:14px;color:var(--suave)}
+.selo{font-size:12px;font-weight:800;border-radius:20px;padding:3px 9px;white-space:nowrap;color:#fff;background:var(--c)}
+.tabela{width:100%;border-collapse:collapse;font-size:14px}
+.tabela th,.tabela td{border-bottom:1px solid var(--linha);padding:7px 8px;text-align:left;vertical-align:top}
+.tabela th{font-size:12.5px;text-transform:uppercase;color:var(--suave);letter-spacing:.03em}
+.tabela td.num{text-align:right;white-space:nowrap}
+.rolar{overflow-x:auto}
+details.bloco{margin-top:14px}
+details.bloco>summary{cursor:pointer;font-weight:800;color:var(--ardosia);padding:8px 0}
+.envio{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:var(--ardosia);color:#fff;border-radius:14px;padding:14px 18px;margin-bottom:14px}
+.envio p{margin:0;font-size:15px}
+.envio .aviso{margin:6px 0 0}
+@media (max-width:900px){.kpis{grid-template-columns:1fr 1fr}.painel{grid-template-columns:1fr}.envio{grid-template-columns:1fr}}
+@media (max-width:520px){.bars li{grid-template-columns:110px 1fr 44px;font-size:13px}}
+@media (max-width:700px){.topo{position:static}.topo nav a{padding:6px 8px;font-size:13px}}
+.rodape{font-size:13px;color:var(--suave);text-align:center;padding:18px 16px 28px}
+/* v6: obrigatórios, áreas de interesse, oportunidades e WhatsApp */
+.obr{color:var(--critico);font-weight:800;margin-left:2px}
+.nota-obr{font-size:13px;color:var(--suave);margin:-4px 0 12px}
+.marca-diag{display:block;height:64px;width:auto;margin:0 0 10px}
+.areas-sel{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.area-op{position:relative;display:grid;grid-template-columns:22px 1fr;gap:4px 10px;align-items:start;border:1px solid var(--linha);border-radius:12px;padding:12px 14px;background:#fff;cursor:pointer}
+.area-op:hover{border-color:var(--ardosia)}
+.area-op input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--ardosia)}
+.area-op:has(input:checked){border-color:var(--ardosia);box-shadow:inset 0 0 0 1px var(--ardosia);background:#F7F9F9}
+.area-op b{font-size:15px;color:var(--ardosia);line-height:1.25}
+.area-op small{grid-column:2;font-size:13px;color:var(--suave)}
+.area-op .selo-tag{grid-column:2;justify-self:start;font-size:11.5px;font-weight:800;color:var(--verde-texto);background:#E3F4EF;border-radius:20px;padding:2px 8px}
+.sel-barra{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;background:var(--nevoa-clara);border-radius:10px;padding:10px 14px}
+.sel-barra strong{color:var(--ardosia)}
+@media (max-width:900px){.areas-sel{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.areas-sel{grid-template-columns:1fr}}
+.oport{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.op{display:flex;flex-direction:column;gap:6px;border:1px solid var(--linha);border-left:5px solid var(--c,var(--ardosia));border-radius:12px;padding:12px 14px;background:#fff}
+.op .tipo{font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--suave)}
+.op h3{font-size:15.5px;margin:0}
+.op p{font-size:13.5px;color:var(--suave);margin:0;flex:1}
+.op .btn{padding:8px 12px;font-size:14px;align-self:flex-start}
+@media (max-width:900px){.oport{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.oport{grid-template-columns:1fr}}
+.plano .sol{display:block;margin-top:3px;font-size:13px;color:var(--verde-texto);font-weight:600}
+.radar-vazio{font-size:14px;color:var(--suave);background:var(--nevoa-clara);border-radius:10px;padding:14px}
+.zap-fixo{position:fixed;right:18px;bottom:18px;z-index:60;display:inline-flex;align-items:center;gap:8px;background:#0B7A3E;color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-radius:40px;padding:12px 18px 12px 14px;box-shadow:0 6px 20px rgba(0,0,0,.22)}
+.zap-fixo:hover{background:#08602F}
+.zap-fixo svg{width:22px;height:22px;flex:none}
+@media (max-width:560px){.zap-fixo span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.zap-fixo{padding:13px}}
+.sociais{position:fixed;right:22px;bottom:84px;z-index:90;display:flex;flex-direction:column;gap:8px}
+.soc{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.22);text-decoration:none}
+.soc svg{width:22px;height:22px}
+.soc.ig{background:#B1306B}.soc.yt{background:#C4161C}.soc.li{background:#0A66C2}
+.soc:hover{transform:translateY(-2px)}
+@media (max-width:560px){.sociais{right:16px;bottom:78px}.soc{width:40px;height:40px}}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo">
+  <div class="wrap">
+    <a href="../" aria-label="Mundo Concreto, voltar ao site"><img src="assets/marca/logo-mundo-concreto-horizontal.png" alt="Mundo Concreto" width="513" height="200"></a>
+    <nav aria-label="Atalhos">
+      <a href="../">Voltar ao site</a>
+      <a data-zap href="#">Falar no WhatsApp</a>
+    </nav>
+  </div>
+  <div class="wrap">
+    <ol class="etapas" role="list" aria-label="Etapas do diagnóstico">
+      <li data-etapa="1" class="ativa">1. Cadastro</li>
+      <li data-etapa="2">2. Áreas de interesse</li>
+      <li data-etapa="3">3. Questionário</li>
+      <li data-etapa="4">4. Painel e PDF</li>
+    </ol>
+  </div>
+</header>
+
+<main id="conteudo">
+<div class="wrap">
+
+<!-- ===================== 1. CADASTRO ===================== -->
+<section id="passo-cadastro" aria-labelledby="t-cad">
+  <div class="intro">
+    <div>
+      <img class="marca-diag" src="assets/produtos/diagnostico-logo.png" alt="Diagnóstico gratuito Mundo Concreto" width="948" height="244">
+      <h1 id="t-cad">Descubra onde a sua fábrica perde lucro</h1>
+      <p>Diagnóstico gratuito para fábricas de blocos, pisos intertravados, tubos e pré-moldados de concreto. Mesma base usada pela nossa consultoria.</p>
+      <ul>
+        <li>Você escolhe as áreas: de 2 a 171 perguntas.</li>
+        <li>Notas de 1 (inexistente) a 10 (excelência), ou “N/A”.</li>
+        <li>Painel na hora, plano de ação e PDF para baixar.</li>
+      </ul>
+    </div>
+    <aside aria-label="Informações rápidas">
+      <p><b>Tempo:</b> cerca de 20 segundos por pergunta.</p>
+      <p><b>Dica:</b> responda com o gerente de produção e o responsável pelo financeiro.</p>
+      <p><b>Sigilo:</b> dados usados só para o diagnóstico e o contato, conforme a LGPD.</p>
+      <p><b>Pausa:</b> as respostas ficam salvas neste navegador.</p>
+    </aside>
+  </div>
+
+  <form class="cartao" id="form-cadastro" novalidate>
+    <h2>Cadastro da empresa</h2>
+    <p class="nota-obr">Campos com <span class="obr" aria-hidden="true">*</span> são obrigatórios.</p>
+    <div class="grade">
+      <div class="campo"><label for="c-nome">Seu nome<span class="obr" aria-hidden="true">*</span></label><input id="c-nome" name="nome" type="text" autocomplete="name" required><span class="erro-campo" id="e-nome"></span></div>
+      <div class="campo"><label for="c-empresa">Nome da empresa<span class="obr" aria-hidden="true">*</span></label><input id="c-empresa" name="empresa" type="text" autocomplete="organization" required><span class="erro-campo" id="e-empresa"></span></div>
+      <div class="campo"><label for="c-pais">País<span class="obr" aria-hidden="true">*</span></label><select id="c-pais" name="pais" autocomplete="country-name" required></select></div>
+      <div class="campo"><label for="c-cnpj" id="l-cnpj">CNPJ da empresa<span class="obr" aria-hidden="true">*</span></label><input id="c-cnpj" name="cnpj" type="text" inputmode="numeric" placeholder="00.000.000/0000-00" required aria-describedby="e-cnpj"><span class="erro-campo" id="e-cnpj"></span></div>
+      <div class="campo"><label for="c-email">E-mail de contato<span class="obr" aria-hidden="true">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required aria-describedby="a-email"><span class="ajuda" id="a-email">A equipe usa este e-mail para falar com você sobre o resultado.</span><span class="erro-campo" id="e-email"></span></div>
+      <div class="campo"><label for="c-tel">Telefone com DDD<span class="obr" aria-hidden="true">*</span></label>
+        <div class="tel"><select id="c-ddi" name="ddi" aria-label="Código do país"></select><input id="c-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(21) 98922-4584" required></div>
+        <span class="erro-campo" id="e-tel"></span></div>
+      <div class="campo"><label for="c-uf" id="l-uf">Estado<span class="obr" aria-hidden="true">*</span></label><select id="c-uf" name="estado" required></select><input id="c-estado-txt" name="estado_txt" type="text" hidden aria-labelledby="l-uf"></div>
+      <div class="campo"><label for="c-cidade">Cidade<span class="obr" aria-hidden="true">*</span></label><input id="c-cidade" name="cidade" type="text" autocomplete="address-level2" required><span class="erro-campo" id="e-cidade"></span></div>
+      <div class="campo largo">
+        <span class="rotulo" id="l-prod">Produtos que a fábrica faz<span class="obr" aria-hidden="true">*</span> <span class="opc">(marque todos)</span></span>
+        <div class="produtos" role="group" aria-labelledby="l-prod">
+          <fieldset><legend>Blocos</legend>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-1" value="Blocos classe A">Classe A</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-2" value="Blocos classe B">Classe B</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-3" value="Blocos classe C">Classe C</label>
+          </fieldset>
+          <fieldset><legend>Pisos</legend>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-4" value="Pisos 35 MPa">35 MPa</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-5" value="Pisos 50 MPa">50 MPa</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-6" value="Piso drenante">Drenante</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-7" value="Piso de 4 cm">Piso de 4 cm</label>
+          </fieldset>
+          <fieldset><legend>Tubos (diâmetro, cm)</legend>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-8" value="Tubo 20">20</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-9" value="Tubo 40">40</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-10" value="Tubo 60">60</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-11" value="Tubo 80">80</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-12" value="Tubo 100">100</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-13" value="Tubo 120">120</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-14" value="Tubo 150">150</label>
+          </fieldset>
+          <fieldset><legend>Outros produtos</legend>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-15" value="Galerias">Galerias</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-16" value="Pré-moldados diversos">Pré-moldados diversos</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-17" value="Acabamentos">Acabamentos</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-18" value="Lajes">Lajes</label>
+            <label class="chk"><input type="checkbox" class="prod" name="produto-19" value="Outros" id="c-outros">Outros</label>
+          </fieldset>
+        </div>
+        <span class="erro-campo" id="e-prod"></span>
+      </div>
+      <div class="campo largo" id="campo-outros" hidden><label for="c-outros-txt">Quais outros produtos?</label><input id="c-outros-txt" name="outros_produtos" type="text"></div>
+      <div class="isca" aria-hidden="true"><label for="c-site">Deixe em branco</label><input id="c-site" name="site" type="text" tabindex="-1" autocomplete="off"></div>
+      <div class="campo largo"><label class="chk"><input type="checkbox" id="c-lgpd" name="lgpd" required>Autorizo o Mundo Concreto a usar estes dados para gerar o diagnóstico, enviar o relatório e entrar em contato, conforme a LGPD.<span class="obr" aria-hidden="true">*</span></label><span class="erro-campo" id="e-lgpd"></span></div>
+    </div>
+    <div class="acoes"><button class="btn btn-amarelo" type="submit">Continuar: escolher as áreas</button></div>
+    <p class="aviso info" id="aviso-retomar" hidden></p>
+  </form>
+</section>
+
+<!-- ===================== 2. ÁREAS DE INTERESSE ===================== -->
+<section id="passo-areas" aria-labelledby="t-areas" hidden>
+  <div class="cartao">
+    <span class="tag">Etapa 2 de 4</span>
+    <h1 id="t-areas" tabindex="-1">Quais áreas você quer avaliar?</h1>
+    <p>Marque as áreas de interesse. Só elas entram no questionário, no painel e no PDF. Com 3 áreas ou mais, o painel mostra o gráfico de visão geral.</p>
+    <div class="sel-barra">
+      <span id="sel-resumo" role="status"><strong>0 áreas</strong></span>
+      <span class="acoes" style="margin:0">
+        <button class="btn btn-contorno" type="button" id="bt-todas">Marcar todas</button>
+        <button class="btn btn-contorno" type="button" id="bt-nenhuma">Limpar</button>
+      </span>
+    </div>
+    <div class="areas-sel" id="areas-sel" role="group" aria-labelledby="t-areas"></div>
+    <p class="ajuda">Para medir a prontidão para o <b>Selo de Qualidade ABCP</b>, inclua a área “Qualidade do Produto e Selo ABCP”.</p>
+    <div class="nav-area">
+      <button class="btn btn-contorno" type="button" id="bt-volta-cad">← Voltar ao cadastro</button>
+      <button class="btn btn-amarelo" type="button" id="bt-ir-quest">Começar o questionário →</button>
+    </div>
+    <p class="aviso erro" id="aviso-areas" role="status"></p>
+  </div>
+</section>
+
+<!-- ===================== 3. QUESTIONÁRIO ===================== -->
+<section id="passo-quest" aria-labelledby="t-area" hidden>
+  <div class="quest">
+    <aside class="lado" aria-label="Áreas do questionário">
+      <div class="geral"><span id="txt-geral">0 respondidas</span><div class="barra"><i id="barra-geral"></i></div></div>
+      <ol id="lista-areas"></ol>
+    </aside>
+    <div class="cartao">
+      <div class="area-cab">
+        <div><span class="tag" id="area-num"></span><h2 id="t-area" tabindex="-1">Finanças</h2></div>
+        <span class="ajuda" id="area-prog"></span>
+      </div>
+      <details class="escala"><summary>Ver a escala de 1 a 10</summary><ol id="lista-escala"></ol></details>
+      <div id="perguntas"></div>
+      <div class="nav-area">
+        <button class="btn btn-contorno" type="button" id="bt-ant">← Área anterior</button>
+        <button class="btn btn-contorno" type="button" id="bt-mudar-areas">Mudar as áreas</button>
+        <button class="btn btn-ardosia" type="button" id="bt-prox">Próxima área →</button>
+        <button class="btn btn-amarelo" type="button" id="bt-fim" hidden>Ver o resultado</button>
+      </div>
+      <p class="aviso erro" id="aviso-pend" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 4. PAINEL ===================== -->
+<section id="passo-res" aria-labelledby="t-res" hidden>
+  <div class="envio">
+    <div>
+      <p id="txt-envio"><b>Gerando o relatório…</b></p>
+      <p class="aviso" id="aviso-envio" role="status"></p>
+    </div>
+    <div class="acoes" style="margin:0">
+      <button class="btn btn-amarelo" type="button" id="bt-pdf">Baixar o PDF</button>
+      <a class="btn btn-contorno" style="border-color:#fff;color:#fff" data-zap="Olá! Fiz o diagnóstico gratuito no site e quero conversar sobre o resultado." href="#">Falar com um consultor</a>
+    </div>
+  </div>
+  <span class="tag">Resultado do diagnóstico</span>
+  <h1 id="t-res">Painel de maturidade</h1>
+  <p id="res-cliente" class="ajuda"></p>
+  <div class="kpis" id="kpis"></div>
+  <div class="painel">
+    <div class="cartao"><h2>Maturidade por área</h2><ul class="bars" id="barras"></ul>
+      <div class="legenda"><span style="--c:var(--critico)">Crítico (abaixo de 40%)</span><span style="--c:var(--desenv)">Em desenvolvimento</span><span style="--c:var(--bom)">Bom (70% ou mais)</span><span style="--c:var(--excelente)">Excelente (90% ou mais)</span></div>
+    </div>
+    <div class="cartao radar"><h2>Visão geral</h2><div id="radar"></div></div>
+  </div>
+  <div class="cartao" style="margin-top:14px">
+    <h2>Oportunidades de melhoria</h2>
+    <p class="ajuda">Soluções do Mundo Concreto e da Gestão Concreta indicadas para os temas abaixo de 70%, das mais urgentes para as menos urgentes.</p>
+    <div class="oport" id="oport"></div>
+  </div>
+  <div class="cartao" style="margin-top:14px">
+    <h2>Plano de ação prioritário</h2>
+    <p class="ajuda">Os 10 temas mais distantes da excelência, ponderados pela prioridade de cada tema.</p>
+    <ol class="plano" id="plano"></ol>
+    <details class="bloco"><summary>Ver todos os temas avaliados</summary><div class="rolar"><table class="tabela" id="tab-temas"></table></div></details>
+  </div>
+  <div class="acoes">
+    <button class="btn btn-contorno" type="button" id="bt-editar">Revisar respostas</button>
+    <button class="btn btn-contorno" type="button" id="bt-mais-areas">Avaliar outras áreas</button>
+    <button class="btn btn-contorno" type="button" id="bt-novo">Fazer um novo diagnóstico</button>
+  </div>
+</section>
+
+</div>
+</main>
+<nav class="sociais" aria-label="Redes sociais">
+  <a class="soc ig" href="https://www.instagram.com/mundoconcreto_/" target="_blank" rel="noopener" aria-label="Instagram do Mundo Concreto (@mundoconcreto_)" title="Instagram @mundoconcreto_"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+  <a class="soc yt" href="https://www.youtube.com/@mundoconcreto-1" target="_blank" rel="noopener" aria-label="YouTube do Mundo Concreto" title="YouTube do Mundo Concreto"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+  <a class="soc li" href="https://www.linkedin.com/in/filipefhonorato/" target="_blank" rel="noopener" aria-label="LinkedIn de Filipe Honorato" title="LinkedIn de Filipe Honorato"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.5 3.5a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM3 9h3v12H3zM9 9h2.9v1.7c.4-.8 1.4-1.9 3.4-1.9 3.1 0 3.7 2 3.7 4.7V21h-3v-6.6c0-1.6 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21H9z"/></svg></a>
+</nav>
+<a class="zap-fixo" data-zap="Olá! Vim pelo diagnóstico gratuito do site e quero falar com um consultor." href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3Z"/></svg><span>Falar no WhatsApp</span></a>
+<p class="rodape">Mundo Concreto · <a href="https://www.mundoconcreto.net/">www.mundoconcreto.net</a> · O diagnóstico é uma autoavaliação e não substitui a auditoria do Selo de Qualidade ABCP.</p>
+
+<script src="assets/diagnostico/questoes.js"></script>
+<script src="assets/js/jspdf.umd.min.js" defer></script>
+<script>
+/* =====================================================================
+   CONFIGURAÇÃO (a única parte que você mexe)
+   ===================================================================== */
+const DIAG_CONFIG = {
+  // Endereço do Google Apps Script (passo a passo no guia). É o MESMO do campo appsScript da home.
+  // Envia o PDF por e-mail e grava o diagnóstico na planilha de cadastros (pasta @cadastro do iCloud).
+  // Vazio = o painel e o PDF funcionam, mas o e-mail não sai sozinho.
+  endpoint: "../api/diagnosticos",   // grava no servidor local; aparece no admin em "Diagnósticos"
+  emailEquipe: "filipe@mundoconcreto.net",   // recebe uma cópia de todo diagnóstico
+  whatsapp: "5521989224584",                 // botão "Falar com um consultor"
+  site: "https://www.mundoconcreto.net/"
+};
+
+(function(){
+"use strict";
+const D = window.DIAGNOSTICO;
+const $ = (s,c=document)=>c.querySelector(s), $$ = (s,c=document)=>[...c.querySelectorAll(s)];
+const esc = t => String(t ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const CHAVE = "mc-diagnostico-v2";   // v2 = questionário revisado (171 perguntas)
+const ler = ()=>{ try{ return JSON.parse(localStorage.getItem(CHAVE)) || null; }catch(e){ return null; } };
+const gravar = ()=>{ try{ localStorage.setItem(CHAVE, JSON.stringify(estado)); }catch(e){} };
+let estado = ler() || { cadastro:null, respostas:{}, sel:[], area:0, id:null };
+
+// WhatsApp
+const zap = msg => "https://wa.me/"+DIAG_CONFIG.whatsapp+"?text="+encodeURIComponent(msg);
+$$("[data-zap]").forEach(a=>{ a.href = zap(a.dataset.zap || "Olá! Estou fazendo o diagnóstico gratuito no site."); a.target="_blank"; a.rel="noopener"; });
+
+/* ---------- países e estados ---------- */
+const PAISES = [["Brasil","55"],["Portugal","351"],["Angola","244"],["Moçambique","258"],["Argentina","54"],["Bolívia","591"],["Chile","56"],["Colômbia","57"],["Equador","593"],["Paraguai","595"],["Peru","51"],["Uruguai","598"],["Venezuela","58"],["México","52"],["Estados Unidos","1"],["Canadá","1"],["Espanha","34"],["Itália","39"],["França","33"],["Alemanha","49"],["China","86"],["Outro país",""]];
+const UFS = ["AC","AL","AP","AM","BA","CE","DF","ES","GO","MA","MT","MS","MG","PA","PB","PR","PE","PI","RJ","RN","RS","RO","RR","SC","SP","SE","TO"];
+const selPais = $("#c-pais"), selDdi = $("#c-ddi"), selUf = $("#c-uf");
+selPais.innerHTML = PAISES.map(([n])=>`<option>${esc(n)}</option>`).join("");
+selDdi.innerHTML = PAISES.filter(p=>p[1]).map(([n,c])=>`<option value="${c}">${esc(n)} +${c}</option>`).join("") + `<option value="">Outro</option>`;
+selUf.innerHTML = `<option value="">Selecione</option>` + UFS.map(u=>`<option>${u}</option>`).join("");
+const txtEstado = $("#c-estado-txt");
+function ajustaPais(){
+  const br = selPais.value === "Brasil";
+  const p = PAISES.find(x=>x[0]===selPais.value);
+  if(p && p[1]) selDdi.value = p[1];
+  selUf.hidden = !br; selUf.required = br; txtEstado.hidden = br; txtEstado.required = !br;
+  $("#l-uf").htmlFor = br ? "c-uf" : "c-estado-txt";
+  const obr = '<span class="obr" aria-hidden="true">*</span>';
+  $("#l-uf").innerHTML = (br ? "Estado" : "Estado, província ou região") + obr;
+  $("#l-cnpj").innerHTML = (br ? "CNPJ da empresa" : "Registro da empresa (equivalente ao CNPJ)") + obr;
+  $("#c-cnpj").placeholder = br ? "00.000.000/0000-00" : "";
+}
+selPais.addEventListener("change", ajustaPais);
+$("#c-outros").addEventListener("change", e=>{ $("#campo-outros").hidden = !e.target.checked; });
+
+/* ---------- máscaras e validação ---------- */
+const cnpj = $("#c-cnpj");
+cnpj.addEventListener("input",()=>{
+  if(selPais.value !== "Brasil") return;
+  const d = cnpj.value.replace(/\D/g,"").slice(0,14);
+  cnpj.value = d.replace(/^(\d{2})(\d)/,"$1.$2").replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3").replace(/\.(\d{3})(\d)/,".$1/$2").replace(/(\d{4})(\d)/,"$1-$2");
+});
+function cnpjValido(v){
+  const c = v.replace(/\D/g,""); if(c.length!==14 || /^(\d)\1+$/.test(c)) return false;
+  const dv = n=>{ let s=0, p=n-7; for(let i=0;i<n;i++){ s+= +c[i]*p--; if(p<2) p=9; } const r=s%11; return r<2?0:11-r; };
+  return dv(12)===+c[12] && dv(13)===+c[13];
+}
+const tel = $("#c-tel");
+tel.addEventListener("input",()=>{
+  if(selDdi.value !== "55") return;
+  const d = tel.value.replace(/\D/g,"").slice(0,11);
+  tel.value = d.length>10 ? d.replace(/^(\d{2})(\d{5})(\d{0,4}).*/,"($1) $2-$3") : d.replace(/^(\d{2})(\d{4})(\d{0,4}).*/,"($1) $2-$3").replace(/^(\d{0,2})$/,"$1");
+});
+
+function erro(id,msg,campo){ $("#e-"+id).textContent = msg || ""; if(campo) campo.setAttribute("aria-invalid", msg ? "true" : "false"); return !msg; }
+
+$("#form-cadastro").addEventListener("submit", e=>{
+  e.preventDefault();
+  const f = e.target;
+  if(f.site.value) return;                     // robô
+  const br = selPais.value === "Brasil";
+  let ok = true, primeiro = null;
+  const chk = (id,cond,msg,campo)=>{ const r = erro(id, cond ? "" : msg, campo); if(!r){ ok=false; primeiro = primeiro || campo; } };
+  chk("nome", f.nome.value.trim().length>=3, "Escreva o seu nome.", f.nome);
+  chk("empresa", f.empresa.value.trim().length>=2, "Escreva o nome da empresa.", f.empresa);
+  chk("cnpj", br ? cnpjValido(f.cnpj.value) : f.cnpj.value.trim().length>=3, br ? "Confira o CNPJ: os 14 números não fecham." : "Informe o registro da empresa.", f.cnpj);
+  chk("email", /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim()), "Confira o e-mail: falta o @ ou o domínio.", f.email);
+  const nTel = f.telefone.value.replace(/\D/g,"");
+  chk("tel", br || selDdi.value==="55" ? nTel.length>=10 && nTel.length<=11 : nTel.length>=6, "Informe o telefone com DDD.", f.telefone);
+  chk("cidade", f.cidade.value.trim().length>=2, "Informe a cidade.", f.cidade);
+  if(br && !selUf.value){ ok=false; primeiro = primeiro || selUf; selUf.setAttribute("aria-invalid","true"); } else selUf.setAttribute("aria-invalid","false");
+  if(!br && !txtEstado.value.trim()){ ok=false; primeiro = primeiro || txtEstado; }
+  const prods = $$('input.prod:checked').map(i=>i.value);
+  chk("prod", prods.length>0, "Marque pelo menos um produto.", $('input.prod'));
+  chk("lgpd", f.lgpd.checked, "Para continuar, marque a autorização.", f.lgpd);
+  if(!ok){ primeiro && primeiro.focus(); return; }
+  estado.cadastro = {
+    nome:f.nome.value.trim(), empresa:f.empresa.value.trim(), cnpj:f.cnpj.value.trim(), email:f.email.value.trim(),
+    pais:selPais.value, ddi:selDdi.value, telefone:(selDdi.value?"+"+selDdi.value+" ":"")+f.telefone.value.trim(),
+    estado: br ? selUf.value : txtEstado.value.trim(), cidade:f.cidade.value.trim(),
+    produtos: prods.filter(p=>p!=="Outros").concat(prods.includes("Outros") && f.outros_produtos.value.trim() ? ["Outros: "+f.outros_produtos.value.trim()] : prods.includes("Outros") ? ["Outros"] : []),
+    lgpd: new Date().toISOString()
+  };
+  estado.id = estado.id || "MC-"+Date.now().toString(36).toUpperCase();
+  gravar(); irPara(2);
+});
+
+/* ---------- preenche o cadastro salvo ---------- */
+function preencheCadastro(){
+  const c = estado.cadastro; if(!c) return;
+  const f = $("#form-cadastro");
+  f.nome.value=c.nome; f.empresa.value=c.empresa; selPais.value=c.pais; ajustaPais(); f.cnpj.value=c.cnpj; f.email.value=c.email;
+  selDdi.value=c.ddi; f.telefone.value=c.telefone.replace(/^\+\d+\s/,""); if(c.pais==="Brasil") selUf.value=c.estado; else txtEstado.value=c.estado;
+  f.cidade.value=c.cidade;
+  $$('input.prod').forEach(i=>{ i.checked = c.produtos.some(p=>p===i.value || (i.value==="Outros" && p.startsWith("Outros"))); });
+  const o = c.produtos.find(p=>p.startsWith("Outros: ")); if(o){ $("#campo-outros").hidden=false; f.outros_produtos.value=o.slice(8); }
+  f.lgpd.checked = true;
+  const n = Object.keys(estado.respostas).length;
+  if(n){ const a=$("#aviso-retomar"); a.hidden=false; a.textContent = `Você já respondeu ${n} ${n>1?"perguntas":"pergunta"} neste navegador. Clique em “Continuar” para seguir de onde parou.`; }
+}
+
+/* ---------- áreas de interesse ---------- */
+const temaDe = {}; D.temas.forEach(t=>temaDe[t.t]=t);
+const porArea = D.areas.map(a=>D.perguntas.filter(q=>q.a===a));
+const CURTO = {"Estratégia e Gestão":"Estratégia","Finanças e Administração":"Finanças","Comercial e Vendas":"Comercial","Liderança e Pessoas":"Pessoas","Presença Digital":"Digital","Produção e PCP":"Produção","OEE e Produtividade":"OEE","Manutenção e Equipamentos":"Manutenção","Materiais, Almoxarifado e Expedição":"Materiais","Sistema de Gestão da Qualidade":"Gestão da qualidade","Qualidade do Produto e Selo ABCP":"Qualidade do produto","Segurança do Trabalho":"Segurança"};
+const curto = a => CURTO[a] || a;
+const minutos = n => Math.max(1, Math.round(n*20/60));
+if(!Array.isArray(estado.sel)) estado.sel = [];
+$("#areas-sel").innerHTML = D.areas.map((a,i)=>{ const n=porArea[i].length, selo=porArea[i].some(q=>q.s);
+  return `<label class="area-op"><input type="checkbox" class="sel-area" value="${i}"><b>${esc(a)}</b><small>${n} perguntas · cerca de ${minutos(n)} min</small>${selo?'<span class="selo-tag">Conta para o Selo ABCP</span>':""}</label>`; }).join("");
+function leSel(){ return $$(".sel-area:checked").map(i=>+i.value).sort((a,b)=>a-b); }
+function resumoSel(){
+  const sel = leSel(), n = sel.reduce((s,i)=>s+porArea[i].length,0);
+  $("#sel-resumo").innerHTML = sel.length ? `<strong>${sel.length} ${sel.length>1?"áreas":"área"} · ${n} perguntas</strong> · cerca de ${minutos(n)} min` : "<strong>Nenhuma área marcada</strong>";
+  $("#bt-todas").disabled = sel.length===D.areas.length; $("#bt-nenhuma").disabled = !sel.length;
+  if(sel.length) $("#aviso-areas").textContent = "";
+}
+function marcaSel(){ $$(".sel-area").forEach(i=>{ i.checked = estado.sel.includes(+i.value); }); resumoSel(); }
+$("#areas-sel").addEventListener("change", resumoSel);
+$("#bt-todas").addEventListener("click",()=>{ $$(".sel-area").forEach(i=>i.checked=true); resumoSel(); });
+$("#bt-nenhuma").addEventListener("click",()=>{ $$(".sel-area").forEach(i=>i.checked=false); resumoSel(); });
+$("#bt-volta-cad").addEventListener("click",()=>irPara(1));
+$("#bt-ir-quest").addEventListener("click",()=>{
+  const sel = leSel();
+  if(!sel.length){ $("#aviso-areas").textContent = "Marque pelo menos uma área para continuar."; return; }
+  const atual = estado.sel[estado.area];
+  estado.sel = sel; estado.area = Math.max(0, sel.indexOf(atual)); gravar(); irPara(3);
+});
+
+/* ---------- questionário (só as áreas escolhidas) ---------- */
+$("#lista-escala").innerHTML = D.escala.map(e=>`<li>${esc(e[0])}</li>`).join("");
+const resp = n => estado.respostas[n];
+const perguntasSel = () => estado.sel.flatMap(i=>porArea[i]);
+function contaArea(i){ return porArea[i].filter(q=>resp(q.n)!==undefined).length; }
+function desenhaLado(){
+  const qs = perguntasSel(), tot = qs.filter(q=>resp(q.n)!==undefined).length;
+  $("#txt-geral").textContent = `${tot} de ${qs.length} respondidas`;
+  $("#barra-geral").style.setProperty("--p", (qs.length ? tot/qs.length*100 : 0)+"%");
+  $("#lista-areas").innerHTML = estado.sel.map((ai,k)=>{ const c=contaArea(ai), t=porArea[ai].length;
+    return `<li><button type="button" data-ir="${k}" ${k===estado.area?'aria-current="step"':""}><span>${esc(D.areas[ai])}</span><small>${c}/${t}</small><span class="mini"><i style="--p:${c/t*100}%"></i></span></button></li>`; }).join("");
+}
+function desenhaArea(foco){
+  const k = estado.area, ai = estado.sel[k], qs = porArea[ai];
+  $("#area-num").textContent = `Área ${k+1} de ${estado.sel.length}`;
+  $("#t-area").textContent = D.areas[ai];
+  $("#area-prog").textContent = `${contaArea(ai)} de ${qs.length} respondidas nesta área`;
+  let html = "", temaAtual = "";
+  qs.forEach(q=>{
+    if(q.t!==temaAtual){ temaAtual=q.t; html += `<h3 class="tema">${esc(q.t)}</h3>`; }
+    const r = resp(q.n), nome = "q"+q.n;
+    let ops = ""; for(let v=1; v<=10; v++) ops += `<label><input type="radio" name="${nome}" value="${v}" ${r===v?"checked":""}><span aria-label="${v}: ${esc(D.escala[v-1][0].replace(/^\d+ – /,""))}">${v}</span></label>`;
+    ops += `<label class="na"><input type="radio" name="${nome}" value="na" ${r==="na"?"checked":""}><span aria-label="Não se aplica">N/A</span></label>`;
+    html += `<fieldset class="perg" data-n="${q.n}"><legend><b>${q.n}.</b>${esc(q.q)}</legend><div class="notas">${ops}</div></fieldset>`;
+  });
+  $("#perguntas").innerHTML = html;
+  $("#bt-ant").disabled = k===0;
+  const ultima = k===estado.sel.length-1;
+  $("#bt-prox").hidden = ultima; $("#bt-fim").hidden = !ultima;
+  $("#aviso-pend").textContent = "";
+  delete $("#bt-prox").dataset.confirma; delete $("#bt-fim").dataset.confirma;
+  desenhaLado();
+  if(foco){ $("#t-area").focus(); }
+}
+$("#perguntas").addEventListener("change", e=>{
+  const inp = e.target; if(inp.type!=="radio") return;
+  const n = +inp.name.slice(1); estado.respostas[n] = inp.value==="na" ? "na" : +inp.value;
+  inp.closest(".perg").classList.remove("pendente");
+  gravar(); desenhaLado(); const ai = estado.sel[estado.area]; $("#area-prog").textContent = `${contaArea(ai)} de ${porArea[ai].length} respondidas nesta área`;
+});
+$("#lista-areas").addEventListener("click", e=>{ const b=e.target.closest("[data-ir]"); if(!b) return; estado.area=+b.dataset.ir; gravar(); desenhaArea(true); });
+$("#bt-ant").addEventListener("click",()=>{ if(estado.area>0){ estado.area--; gravar(); desenhaArea(true); } });
+$("#bt-mudar-areas").addEventListener("click",()=>irPara(2));
+$("#bt-prox").addEventListener("click",()=>{
+  const pend = porArea[estado.sel[estado.area]].filter(q=>resp(q.n)===undefined);
+  if(pend.length && !$("#bt-prox").dataset.confirma){
+    pend.forEach(q=>$(`.perg[data-n="${q.n}"]`).classList.add("pendente"));
+    $("#aviso-pend").textContent = `${pend.length} ${pend.length>1?"perguntas desta área ficaram":"pergunta desta área ficou"} sem resposta (número em laranja). Clique de novo em “Próxima área” para seguir assim mesmo.`;
+    $("#bt-prox").dataset.confirma = "1"; return;
+  }
+  estado.area++; gravar(); desenhaArea(true);
+});
+$("#bt-fim").addEventListener("click",()=>{
+  const qs = perguntasSel(), pend = qs.filter(q=>resp(q.n)===undefined).length;
+  if(pend && !$("#bt-fim").dataset.confirma){
+    $("#aviso-pend").textContent = `Ainda ${pend>1?`faltam ${pend} perguntas`:"falta 1 pergunta"} nas áreas escolhidas. Sem resposta, elas ficam fora do cálculo. Clique de novo em “Ver o resultado” para concluir assim mesmo, ou use a lista de áreas para completar.`;
+    $("#bt-fim").dataset.confirma = "1"; return;
+  }
+  const comNota = qs.filter(q=>typeof resp(q.n)==="number").length;
+  const minimo = Math.min(5, qs.length);
+  if(comNota < minimo){ $("#aviso-pend").textContent = `Dê nota a pelo menos ${minimo} perguntas para gerar o painel.`; return; }
+  irPara(4);
+});
+
+/* ---------- cálculo (mesma regra da planilha) ---------- */
+function classe(m){ if(m===null) return ["Sem respostas","var(--suave)","#8A8F98"]; if(m>=D.faixas.excelente) return ["Excelente","var(--excelente)","#2A6F87"]; if(m>=D.faixas.bom) return ["Bom","var(--bom)","#1C7568"]; if(m>=D.faixas.critico) return ["Em desenvolvimento","var(--desenv)","#8A5A00"]; return ["Crítico","var(--critico)","#C0392B"]; }
+function calcular(){
+  const soma = {}, max = {}, tSoma = {}, tMax = {};
+  let gS=0, gM=0, sS=0, sM=0, na=0, resp_=0, conf=0, totSelo=0;
+  const qs = perguntasSel();
+  qs.forEach(q=>{
+    const t = temaDe[q.t], r = estado.respostas[q.n];
+    if(r===undefined) return;
+    if(r==="na"){ na++; return; }
+    resp_++;
+    tSoma[q.t]=(tSoma[q.t]||0)+r*t.p; tMax[q.t]=(tMax[q.t]||0)+10*t.p;
+    soma[t.a]=(soma[t.a]||0)+r*t.p; max[t.a]=(max[t.a]||0)+10*t.p; gS+=r*t.p; gM+=10*t.p;
+    if(q.s){ totSelo++; sS+=r*t.p; sM+=10*t.p; if(r>=D.conforme) conf++; }
+  });
+  const nomesSel = estado.sel.map(i=>D.areas[i]);
+  const areas = nomesSel.map(a=>({ area:a, m: max[a] ? soma[a]/max[a] : null }));
+  const temas = D.temas.filter(t=>nomesSel.includes(t.a)).map(t=>({ ...t, m: tMax[t.t] ? tSoma[t.t]/tMax[t.t] : null }));
+  const plano = temas.filter(t=>t.m!==null).map(t=>({...t, gap:(1-t.m)*t.p})).filter(t=>t.gap>0).sort((a,b)=>b.gap-a.gap).slice(0,D.planoItens);
+  // Oportunidades: soluções indicadas para os temas abaixo de "bom", somando a urgência de cada tema
+  const pts = {}, porProd = {};
+  temas.filter(t=>t.m!==null && t.m<D.faixas.bom).forEach(t=>{ const g=(1-t.m)*t.p;
+    (t.prod||[]).forEach((pid,k)=>{ pts[pid]=(pts[pid]||0)+g*[1,.7,.5][Math.min(k,2)]; (porProd[pid]=porProd[pid]||[]).push({t:t.t,g}); }); });
+  const oportunidades = Object.keys(pts).sort((a,b)=>pts[b]-pts[a]).slice(0,6).map(pid=>({ id:pid, ...D.produtos[pid], temas: porProd[pid].sort((a,b)=>b.g-a.g).map(x=>x.t) }));
+  const comNota = areas.filter(a=>a.m!==null).sort((a,b)=>a.m-b.m);
+  return { geral: gM ? gS/gM : null, areas, temas, plano, oportunidades, na, respondidas:resp_, total:qs.length, pendentes: qs.length-resp_-na,
+    selo: sM ? sS/sM : null, seloConf:conf, seloTot:totSelo,
+    critica: comNota.length>1 ? comNota[0] : null, criticos: temas.filter(t=>t.m!==null && t.m<D.faixas.critico).length };
+}
+const pct = m => m===null ? "—" : Math.round(m*100)+"%";
+const nomeProd = id => (D.produtos[id]||{}).nome || id;
+
+/* ---------- painel ---------- */
+let R = null;
+function radarSVG(areas){
+  const n=areas.length, cx=170, cy=160, r=118, pts=[], eixos=[], rotulos=[];
+  const ponto=(i,v)=>{ const ang=-Math.PI/2+i*2*Math.PI/n; return [cx+Math.cos(ang)*r*v, cy+Math.sin(ang)*r*v, ang]; };
+  let grade=""; [0.25,0.5,0.75,1].forEach(k=>{ grade += `<polygon points="${areas.map((_,i)=>ponto(i,k).slice(0,2).join(",")).join(" ")}" fill="none" stroke="#D9D6DE" stroke-width="1"/>`; });
+  const meta = areas.map((_,i)=>ponto(i,D.faixas.bom).slice(0,2).join(",")).join(" ");
+  areas.forEach((a,i)=>{ const [x,y,ang]=ponto(i,1); eixos.push(`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#E6E3EA"/>`);
+    const [lx,ly]=ponto(i,1.17); const anchor=Math.abs(Math.cos(ang))<0.2?"middle":(Math.cos(ang)>0?"start":"end");
+    rotulos.push(`<text x="${lx}" y="${ly}" font-size="10.5" fill="#56636B" text-anchor="${anchor}" dominant-baseline="middle">${esc(curto(a.area))} ${a.m===null?"—":Math.round(a.m*100)+"%"}</text>`);
+    pts.push(ponto(i,a.m||0).slice(0,2).join(",")); });
+  return `<svg viewBox="-118 -8 576 336" role="img" aria-label="Gráfico radar com a maturidade de ${n} áreas">${grade}${eixos.join("")}<polygon points="${meta}" fill="none" stroke="#F7B733" stroke-width="1.5" stroke-dasharray="4 3"/><polygon points="${pts.join(" ")}" fill="rgba(74,189,171,.28)" stroke="#1C7568" stroke-width="2"/>${rotulos.join("")}</svg><p class="legenda"><span style="--c:#1C7568">Sua fábrica</span><span style="--c:#F7B733">Meta: 70% (bom)</span></p>`;
+}
+const CORES_TIPO = {"Consultoria":"#445057","Sistema":"#3F72F6","Cursos":"#1C7568","Treinamento":"#1C7568","Livro":"#B5340C","Eventos":"#8A5A00","Missões":"#1B3A32"};
+function desenhaPainel(){
+  R = calcular();
+  const c = estado.cadastro, cl = classe(R.geral);
+  $("#res-cliente").textContent = `${c.empresa} · ${c.cidade}/${c.estado} · ${c.pais} · ${new Date().toLocaleDateString("pt-BR")} · código ${estado.id}`;
+  $("#kpis").innerHTML = [
+    ["Índice geral de maturidade", pct(R.geral), cl[0], cl[1]],
+    ["Prontidão para o Selo ABCP", R.seloTot ? pct(R.selo) : "—", R.seloTot ? `${R.seloConf} de ${R.seloTot} itens com nota 7 ou mais` : "Inclua a área de qualidade do produto", classe(R.selo)[1]],
+    ["Área mais crítica", R.critica ? R.critica.area : "—", R.critica ? pct(R.critica.m) : "Avalie 2 áreas ou mais", "var(--laranja)"],
+    ["Respostas", `${R.respondidas}`, `de ${R.total} · N/A ${R.na} · pendentes ${R.pendentes} · temas críticos ${R.criticos}`, "var(--azul)"]
+  ].map(k=>`<div class="kpi" style="--cor:${k[3]}"><span>${esc(k[0])}</span><strong${String(k[1]).length>10?' class="longo"':''}>${esc(k[1])}</strong><small>${esc(k[2])}</small></div>`).join("");
+  $("#barras").innerHTML = R.areas.map(a=>{ const k=classe(a.m); return `<li><span>${esc(a.area)}</span><span class="trilho"><i style="--v:${a.m===null?0:Math.round(a.m*100)}%;--c:${k[1]}"></i></span><b class="${a.m===null?"sem":""}">${pct(a.m)}</b></li>`; }).join("");
+  $("#radar").innerHTML = R.areas.length>=3 ? radarSVG(R.areas) : `<p class="radar-vazio">O gráfico de visão geral aparece quando você avalia 3 áreas ou mais. Use “Avaliar outras áreas” abaixo.</p>`;
+  $("#oport").innerHTML = R.oportunidades.length ? R.oportunidades.map(o=>`<div class="op" style="--c:${CORES_TIPO[o.tipo]||"#445057"}"><span class="tipo">${esc(o.tipo)}</span><h3>${esc(o.nome)}</h3><p>Ajuda em: ${esc(o.temas.slice(0,3).join("; "))}.</p><a class="btn btn-ardosia" target="_blank" rel="noopener" href="${zap("Olá! Fiz o diagnóstico gratuito e quero conhecer: "+o.nome+".")}">Quero conhecer</a></div>`).join("")
+    : `<div class="op" style="--c:var(--bom)"><span class="tipo">Parabéns</span><h3>Nenhum tema abaixo de 70%</h3><p>Próximo passo: padronizar, medir e buscar o Selo de Qualidade ABCP.</p><a class="btn btn-ardosia" target="_blank" rel="noopener" href="${zap("Olá! Fiz o diagnóstico gratuito e quero falar sobre o Selo de Qualidade ABCP.")}">Falar com um consultor</a></div>`;
+  $("#plano").innerHTML = R.plano.length ? R.plano.map(t=>{ const k=classe(t.m); return `<li><div><h3>${esc(t.t)} <span class="opc">· ${esc(curto(t.a))}</span></h3><p>${esc(t.rec)}</p><span class="sol">Solução indicada: ${esc((t.prod||[]).slice(0,2).map(nomeProd).join(" · "))}</span></div><span class="selo" style="--c:${k[1]}">${pct(t.m)}</span></li>`; }).join("") : "<li><div><h3>Nenhum tema abaixo da excelência</h3><p>Parabéns: mantenha a rotina de medição.</p></div><span></span></li>";
+  $("#tab-temas").innerHTML = `<thead><tr><th scope="col">Tema</th><th scope="col">Área</th><th scope="col">Peso</th><th scope="col" class="num">Maturidade</th><th scope="col">Situação</th></tr></thead><tbody>${R.temas.map(t=>`<tr><td>${esc(t.t)}</td><td>${esc(t.a)}</td><td>${t.p}</td><td class="num">${pct(t.m)}</td><td>${esc(classe(t.m)[0])}</td></tr>`).join("")}</tbody>`;
+}
+
+/* ---------- PDF (jsPDF, gerado no navegador) ---------- */
+function carregaImagem(src){
+  return fetch(src).then(r=>r.ok?r.blob():null).then(b=>b?new Promise(res=>{ const fr=new FileReader(); fr.onload=()=>res(fr.result); fr.onerror=()=>res(null); fr.readAsDataURL(b); }):null).catch(()=>null);
+}
+async function gerarPDF(){
+  if(!window.jspdf) throw new Error("jsPDF não carregou");
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({unit:"mm", format:"a4"});
+  const W=210, M=14, c=estado.cadastro;
+  const logo = await carregaImagem("assets/marca/logo-mundo-concreto-horizontal-branco.png");
+  const cor = h=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+  const ARD=cor("#445057"), AMA=cor("#F7B733"), SUA=cor("#56636B"), LIN=cor("#D9D6DE");
+  let y;
+  const cabecalho = (titulo)=>{
+    doc.setFillColor(...ARD); doc.rect(0,0,W,24,"F");
+    if(logo) doc.addImage(logo,"PNG",M,4,41,16);
+    doc.setTextColor(255,255,255); doc.setFont("helvetica","bold"); doc.setFontSize(11);
+    doc.text(titulo, W-M, 11, {align:"right"});
+    doc.setFont("helvetica","normal"); doc.setFontSize(8.5); doc.text(`${c.empresa} · código ${estado.id}`, W-M, 17, {align:"right"});
+    doc.setFillColor(...AMA); doc.rect(0,24,W,1.2,"F");
+    y = 34; doc.setTextColor(46,55,60);
+  };
+  const novaPagina = (titulo)=>{ doc.addPage(); cabecalho(titulo); };
+  const espaco = (h,titulo)=>{ if(y+h>282){ novaPagina(titulo); } };
+  const texto = (t,x,w,tam=9.5,estilo="normal",corT=[46,55,60])=>{ doc.setFont("helvetica",estilo); doc.setFontSize(tam); doc.setTextColor(...corT); const l=doc.splitTextToSize(String(t),w); doc.text(l,x,y); return l.length*tam*0.42; };
+
+  // Página 1: dados e painel
+  cabecalho("Diagnóstico de maturidade da fábrica");
+  doc.setFont("helvetica","bold"); doc.setFontSize(17); doc.text("Diagnóstico empresarial setorial", M, y); y+=6;
+  doc.setFont("helvetica","normal"); doc.setFontSize(9.5); doc.setTextColor(...SUA);
+  doc.text(`Maturidade da fábrica de artefatos e pré-moldados de concreto · ${new Date().toLocaleDateString("pt-BR")}`, M, y); y+=7;
+  const dados = [["Empresa",c.empresa],["CNPJ / registro",c.cnpj],["Responsável",c.nome],["E-mail",c.email],["Telefone",c.telefone],["Local",`${c.cidade} / ${c.estado} · ${c.pais}`],["Produtos",c.produtos.join(", ")],["Áreas avaliadas",`${R.areas.length} de ${D.areas.length}: ${R.areas.map(a=>curto(a.area)).join(", ")}`]];
+  doc.setDrawColor(...LIN); doc.setFillColor(243,242,245);
+  const hDados = 6+dados.reduce((s,d)=>s+doc.splitTextToSize(d[1],140).length*4.3,0);
+  doc.roundedRect(M,y-4,W-2*M,hDados,2,2,"F");
+  dados.forEach(d=>{ doc.setFont("helvetica","bold"); doc.setFontSize(9); doc.setTextColor(...SUA); doc.text(d[0],M+4,y+1);
+    doc.setFont("helvetica","normal"); doc.setTextColor(46,55,60); const l=doc.splitTextToSize(d[1],140); doc.text(l,M+40,y+1); y+=l.length*4.3; });
+  y+=8;
+  const cl=classe(R.geral);
+  const kp=[["Índice geral",pct(R.geral),cl[0],cl[2]],["Prontidão Selo ABCP",R.seloTot?pct(R.selo):"—",R.seloTot?`${R.seloConf} de ${R.seloTot} itens com nota 7+`:"área não avaliada",classe(R.selo)[2]],["Área mais crítica",R.critica?R.critica.area:"—",R.critica?pct(R.critica.m):"","#B5340C"],["Respostas",`${R.respondidas}/${R.total}`,`N/A ${R.na} · pendentes ${R.pendentes}`,"#2A6F87"]];
+  const kw=(W-2*M-9)/4;
+  kp.forEach((k,i)=>{ const x=M+i*(kw+3); doc.setDrawColor(...LIN); doc.setFillColor(255,255,255); doc.roundedRect(x,y,kw,26,2,2,"FD"); doc.setFillColor(...cor(k[3])); doc.rect(x,y,kw,1.6,"F");
+    doc.setFont("helvetica","bold"); doc.setFontSize(7.5); doc.setTextColor(...SUA); doc.text(k[0].toUpperCase(),x+3,y+6.5);
+    const longo = k[1].length>12; doc.setFontSize(longo?10:15); doc.setTextColor(...ARD);
+    doc.text(doc.splitTextToSize(k[1],kw-6).slice(0,2),x+3,longo?y+12:y+14);
+    doc.setFont("helvetica","normal"); doc.setFontSize(7.5); doc.setTextColor(...SUA); doc.text(doc.splitTextToSize(k[2],kw-6).slice(0,1),x+3,y+22); });
+  y+=34;
+  doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.setTextColor(...ARD); doc.text("Maturidade por área", M, y); y+=6;
+  R.areas.forEach(a=>{ const k=classe(a.m); doc.setFont("helvetica","normal"); doc.setFontSize(8.6); doc.setTextColor(46,55,60); doc.text(a.area,M,y+3.2);
+    const bx=M+64, bw=W-2*M-64-16; doc.setFillColor(223,220,227); doc.roundedRect(bx,y,bw,4.2,1.5,1.5,"F");
+    if(a.m){ doc.setFillColor(...cor(k[2])); doc.roundedRect(bx,y,Math.max(bw*a.m,2),4.2,1.5,1.5,"F"); }
+    doc.setFont("helvetica","bold"); doc.text(pct(a.m),W-M,y+3.2,{align:"right"}); y+=7.2; });
+  y+=3; doc.setFont("helvetica","normal"); doc.setFontSize(8); doc.setTextColor(...SUA);
+  doc.text("Faixas: crítico abaixo de 40% · em desenvolvimento de 40% a 69% · bom a partir de 70% · excelente a partir de 90%. Perguntas N/A ficam fora do cálculo.", M, y);
+
+  // Página 2: visão geral (radar) e oportunidades de melhoria
+  novaPagina("Visão geral e oportunidades");
+  doc.setFont("helvetica","bold"); doc.setFontSize(14); doc.setTextColor(...ARD); doc.text("Visão geral", M, y); y+=4;
+  if(R.areas.length>=3){
+    const n=R.areas.length, cx=W/2, cy=y+44, rr=36;
+    const pt=(i,v)=>{ const a=-Math.PI/2+i*2*Math.PI/n; return [cx+Math.cos(a)*rr*v, cy+Math.sin(a)*rr*v, a]; };
+    const poli=(v,estilo)=>{ const ps=R.areas.map((_,i)=>pt(i,typeof v==="function"?v(i):v)); const d=ps.slice(1).map((p,i)=>[p[0]-ps[i][0],p[1]-ps[i][1]]); doc.lines(d,ps[0][0],ps[0][1],[1,1],estilo,true); };
+    doc.setFillColor(205,237,231); doc.setDrawColor(28,117,104); doc.setLineWidth(0.6); poli(i=>R.areas[i].m||0,"FD");
+    doc.setDrawColor(...LIN); doc.setLineWidth(0.2); [0.25,0.5,0.75,1].forEach(k=>poli(k,"S"));
+    R.areas.forEach((a,i)=>{ const p=pt(i,1); doc.line(cx,cy,p[0],p[1]); });
+    doc.setDrawColor(...AMA); doc.setLineWidth(0.4); doc.setLineDashPattern([1.2,1],0); poli(D.faixas.bom,"S"); doc.setLineDashPattern([],0);
+    doc.setDrawColor(28,117,104); doc.setLineWidth(0.6); poli(i=>R.areas[i].m||0,"S"); doc.setLineWidth(0.2);
+    doc.setFontSize(8); R.areas.forEach((a,i)=>{ const p=pt(i,1.2); const al=Math.abs(Math.cos(p[2]))<0.2?"center":(Math.cos(p[2])>0?"left":"right");
+      doc.setFont("helvetica","normal"); doc.setTextColor(46,55,60); doc.text(`${curto(a.area)} ${pct(a.m)}`, p[0], p[1]+1, {align:al}); });
+    y=cy+rr+12;
+    doc.setFontSize(8); doc.setTextColor(...SUA); doc.text("Área verde: sua fábrica · linha tracejada: meta de 70% (bom).", cx, y, {align:"center"}); y+=9;
+  } else { y+=4; y+=texto("O gráfico de visão geral aparece quando 3 áreas ou mais são avaliadas.",M,W-2*M,9,"normal",SUA)+6; }
+  doc.setFont("helvetica","bold"); doc.setFontSize(14); doc.setTextColor(...ARD); doc.text("Oportunidades de melhoria", M, y); y+=5;
+  y+= texto("Soluções do Mundo Concreto e da Gestão Concreta indicadas para os temas abaixo de 70%, das mais urgentes para as menos urgentes.",M,W-2*M,9,"normal",SUA)+3;
+  const ops = R.oportunidades.length ? R.oportunidades : [{nome:"Selo de Qualidade ABCP",tipo:"Próximo passo",temas:["Nenhum tema abaixo de 70%: padronize, meça e busque o Selo"]}];
+  ops.forEach((o,i)=>{
+    const lt = doc.splitTextToSize("Ajuda em: "+o.temas.slice(0,4).join("; ")+".", W-2*M-16); const h = 11+lt.length*3.9;
+    espaco(h+3,"Oportunidades de melhoria");
+    doc.setDrawColor(...LIN); doc.setFillColor(255,255,255); doc.roundedRect(M,y-4,W-2*M,h,2,2,"FD");
+    doc.setFillColor(...cor(CORES_TIPO[o.tipo]||"#445057")); doc.rect(M,y-4,1.8,h,"F");
+    doc.setFont("helvetica","bold"); doc.setFontSize(7.5); doc.setTextColor(...SUA); doc.text(String(o.tipo).toUpperCase(),M+6,y);
+    doc.setFontSize(10.5); doc.setTextColor(46,55,60); doc.text(o.nome,M+6,y+5);
+    doc.setFont("helvetica","normal"); doc.setFontSize(8.8); doc.setTextColor(...SUA); doc.text(lt,M+6,y+9.6); y+=h+3;
+  });
+  espaco(14,"Oportunidades de melhoria");
+  doc.setFont("helvetica","bold"); doc.setFontSize(9.5); doc.setTextColor(...ARD);
+  doc.text(`Fale com um consultor: WhatsApp +55 21 98922-4584 · ${DIAG_CONFIG.emailEquipe}`, M, y+2);
+
+  // Página 3: plano de ação
+  novaPagina("Plano de ação prioritário");
+  doc.setFont("helvetica","bold"); doc.setFontSize(14); doc.setTextColor(...ARD); doc.text("Plano de ação prioritário", M, y); y+=5;
+  y+= texto("Os 10 temas com maior distância até a excelência, ponderados pela prioridade de cada tema. Comece pelos primeiros.",M,W-2*M,9,"normal",SUA)+3;
+  R.plano.forEach((t,i)=>{
+    const lr = doc.splitTextToSize(t.rec, W-2*M-30); const ls = doc.splitTextToSize("Solução indicada: "+(t.prod||[]).slice(0,2).map(nomeProd).join(" · "), W-2*M-30); const h = 10+(lr.length+ls.length)*4;
+    espaco(h+3,"Plano de ação prioritário");
+    doc.setDrawColor(...LIN); doc.setFillColor(255,255,255); doc.roundedRect(M,y-4,W-2*M,h,2,2,"FD");
+    doc.setFillColor(...AMA); doc.circle(M+6,y+1,3.6,"F"); doc.setFont("helvetica","bold"); doc.setFontSize(9); doc.setTextColor(46,55,60); doc.text(String(i+1),M+6,y+2.2,{align:"center"});
+    doc.setFontSize(10); doc.text(doc.splitTextToSize(t.t,118)[0],M+13,y+1.5); doc.setTextColor(...cor(classe(t.m)[2])); doc.text(`${pct(t.m)} · ${classe(t.m)[0]}`,W-M-3,y+1.5,{align:"right"});
+    doc.setFont("helvetica","normal"); doc.setFontSize(9); doc.setTextColor(...SUA); doc.text(lr,M+13,y+6.5);
+    doc.setTextColor(28,117,104); doc.text(ls,M+13,y+6.5+lr.length*4); y+=h+3;
+  });
+  // Temas
+  espaco(30,"Maturidade por tema"); y+=4;
+  doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.setTextColor(...ARD); doc.text("Maturidade dos temas avaliados", M, y); y+=6;
+  R.temas.forEach(t=>{ espaco(6,"Maturidade por tema"); doc.setFont("helvetica","normal"); doc.setFontSize(8.5); doc.setTextColor(46,55,60);
+    doc.text(doc.splitTextToSize(t.t,118)[0],M,y); doc.setTextColor(...SUA); doc.text(`peso ${t.p}`,M+122,y);
+    doc.setTextColor(...cor(classe(t.m)[2])); doc.text(`${pct(t.m)}  ${classe(t.m)[0]}`,W-M,y,{align:"right"});
+    doc.setDrawColor(...LIN); doc.line(M,y+1.6,W-M,y+1.6); y+=5.4; });
+  // Respostas
+  novaPagina("Respostas do questionário");
+  doc.setFont("helvetica","bold"); doc.setFontSize(12); doc.setTextColor(...ARD); doc.text("Respostas do questionário", M, y); y+=6;
+  let areaAt="";
+  perguntasSel().forEach(q=>{
+    const a=q.a; if(a!==areaAt){ areaAt=a; espaco(12,"Respostas do questionário"); y+=2; doc.setFont("helvetica","bold"); doc.setFontSize(10); doc.setTextColor(...ARD); doc.text(a,M,y); y+=5; }
+    const r=estado.respostas[q.n]; const l=doc.splitTextToSize(`${q.n}. ${q.q}`, W-2*M-24);
+    espaco(l.length*3.7+1.5,"Respostas do questionário");
+    doc.setFont("helvetica","normal"); doc.setFontSize(8); doc.setTextColor(46,55,60); doc.text(l,M,y);
+    doc.setFont("helvetica","bold"); doc.setTextColor(...(r===undefined?cor("#B5340C"):ARD)); doc.text(r===undefined?"pendente":r==="na"?"N/A":String(r),W-M,y,{align:"right"});
+    y+=l.length*3.7+1.5;
+  });
+  // Rodapé em todas as páginas
+  const tot=doc.getNumberOfPages();
+  for(let p=1;p<=tot;p++){ doc.setPage(p); doc.setFont("helvetica","normal"); doc.setFontSize(7.5); doc.setTextColor(...SUA);
+    doc.text("Mundo Concreto · www.mundoconcreto.net · autoavaliação; não substitui a auditoria do Selo de Qualidade ABCP.",M,291); doc.text(`página ${p} de ${tot}`,W-M,291,{align:"right"}); }
+  return doc;
+}
+let pdfDoc = null;
+const nomeArquivo = ()=> "Diagnostico_"+estado.cadastro.empresa.normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^A-Za-z0-9]+/g,"_").replace(/^_|_$/g,"").slice(0,40)+"_"+new Date().toISOString().slice(0,10)+".pdf";
+$("#bt-pdf").addEventListener("click", async ()=>{ try{ pdfDoc = pdfDoc || await gerarPDF(); pdfDoc.save(nomeArquivo()); }catch(e){ $("#aviso-envio").className="aviso erro"; $("#aviso-envio").textContent="Não foi possível gerar o PDF neste navegador. Tente pelo Chrome ou Edge atualizados."; } });
+
+async function enviar(){
+  const av = $("#aviso-envio"), tx = $("#txt-envio");
+  try{ pdfDoc = await gerarPDF(); }catch(e){ tx.innerHTML = "<b>Painel pronto.</b>"; av.className="aviso erro"; av.textContent="O PDF não pôde ser gerado neste navegador. Use o botão ao lado para tentar de novo."; return; }
+  if(!DIAG_CONFIG.endpoint){
+    tx.innerHTML = "<b>Seu painel está pronto.</b> Baixe o PDF no botão ao lado.";
+    av.className="aviso info"; av.textContent = `O envio automático por e-mail ainda não foi ativado neste site. Baixe o PDF e, se quiser, envie para ${DIAG_CONFIG.emailEquipe}.`;
+    return;
+  }
+  const assinatura = JSON.stringify([estado.sel, estado.respostas]);
+  if(estado.enviado === assinatura){ tx.innerHTML = "<b>Seu painel está pronto.</b>"; av.className="aviso ok"; av.textContent = "Este diagnóstico já foi salvo. A equipe do Mundo Concreto já pode ver as respostas."; return; }
+  tx.innerHTML = "<b>Salvando o diagnóstico…</b>";
+  const base64 = pdfDoc.output("datauristring").split(",")[1];
+  const corpo = { id:estado.id, cadastro:estado.cadastro, resumo:{ geral:pct(R.geral), classificacao:classe(R.geral)[0], selo:R.seloTot?pct(R.selo):"não avaliada", areaCritica:R.critica?R.critica.area:"", areas:R.areas.map(a=>[a.area,pct(a.m)]), plano:R.plano.map(t=>t.t), oportunidades:R.oportunidades.map(o=>o.nome) }, arquivo:nomeArquivo(), pdf:base64, site:"" };
+  try{
+    const r = await fetch(DIAG_CONFIG.endpoint,{ method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(corpo) });
+    if(!r.ok) throw new Error("HTTP "+r.status);
+    const d = await r.json().catch(()=>({})); if(d.id) estado.id = d.id;
+    estado.enviado = assinatura; gravar();
+    tx.innerHTML = "<b>Pronto! Diagnóstico salvo.</b>";
+    av.className="aviso ok"; av.textContent = "Seu diagnóstico foi salvo e a equipe do Mundo Concreto já pode ver as respostas. Baixe o PDF no botão ao lado.";
+  }catch(e){
+    tx.innerHTML = "<b>Seu painel está pronto.</b>";
+    av.className="aviso erro"; av.textContent = "Não conseguimos salvar o diagnóstico agora. Baixe o PDF no botão ao lado e tente de novo em alguns minutos.";
+  }
+}
+
+/* ---------- navegação entre as etapas ---------- */
+function irPara(n){
+  if(n>=3 && !estado.sel.length) n = 2;
+  $("#passo-cadastro").hidden = n!==1; $("#passo-areas").hidden = n!==2; $("#passo-quest").hidden = n!==3; $("#passo-res").hidden = n!==4;
+  $$(".etapas li").forEach(li=>{ const e=+li.dataset.etapa; li.className = e===n ? "ativa" : e<n ? "feita" : ""; if(e===n) li.setAttribute("aria-current","step"); else li.removeAttribute("aria-current"); });
+  window.scrollTo(0,0);
+  if(n===2){ marcaSel(); $("#t-areas").focus(); }
+  if(n===3){ estado.area = Math.min(estado.area, estado.sel.length-1); desenhaArea(true); }
+  if(n===4){ desenhaPainel(); pdfDoc=null; enviar(); $("#t-res").focus && $("#t-res").setAttribute("tabindex","-1"); $("#t-res").focus(); }
+}
+$("#bt-editar").addEventListener("click",()=>irPara(3));
+$("#bt-mais-areas").addEventListener("click",()=>irPara(2));
+$("#bt-novo").addEventListener("click",()=>{ estado = { cadastro:null, respostas:{}, sel:[], area:0, id:null }; gravar(); $("#form-cadastro").reset(); ajustaPais(); $("#aviso-retomar").hidden=true; irPara(1); });
+
+ajustaPais(); preencheCadastro();
+window.__diag = { estado:()=>estado, calcular, gerarPDF };   // usado só nos testes
+})();
+</script>
+</body>
+</html>

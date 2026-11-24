@@ -1,0 +1,38 @@
+/* Card da vitrine desenhado em HTML sobre o fundo (mesmas medidas do card 1200×960 original).
+   Tudo em "u" = 1/1200 da largura do card, então escala com o tamanho na tela. */
+.cr { position: absolute; inset: 0; container-type: size; overflow: hidden; background-size: cover; background-position: center;
+  font-family: Helvetica, Arial, sans-serif; color: var(--cr-tx); text-align: left; }
+.cr > * { --u: calc(100cqw / 1200); }
+.cr-sigla { position: absolute; left: calc(60 * var(--u)); top: calc(44 * var(--u)); width: calc(40 * var(--u)); height: calc(40 * var(--u)); border-radius: calc(10 * var(--u));
+  background: var(--cr-ac); color: var(--cr-sobre); display: grid; place-items: center; font-weight: 800; font-size: calc(16 * var(--u)); }
+.cr-canto { position: absolute; left: calc(116 * var(--u)); top: calc(46 * var(--u)); font-weight: 700; font-size: calc(26 * var(--u)); line-height: calc(36 * var(--u)); white-space: nowrap; }
+.cr-menu { position: absolute; right: calc(60 * var(--u)); top: calc(50 * var(--u)); display: flex; gap: calc(12 * var(--u)); margin: 0; padding: 0; list-style: none; }
+.cr-menu li { height: calc(28 * var(--u)); padding: 0 calc(16 * var(--u)); border-radius: calc(14 * var(--u)); background: var(--cr-mu); font-size: calc(15 * var(--u)); font-weight: 500;
+  line-height: calc(28 * var(--u)); opacity: .8; white-space: nowrap; }
+.cr-titulo { position: absolute; left: calc(60 * var(--u)); width: calc(1080 * var(--u)); bottom: calc(642 * var(--u)); margin: 0; font-weight: 800;
+  font-size: calc(64 * var(--u)); line-height: 1.08; letter-spacing: -.01em; }
+.cr-titulo.longo { font-size: calc(52 * var(--u)); }
+.cr-texto { position: absolute; left: calc(60 * var(--u)); top: calc(342 * var(--u)); width: calc(760 * var(--u)); margin: 0; font-size: calc(21 * var(--u)); line-height: calc(30 * var(--u));
+  opacity: .75; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.cr-botoes { position: absolute; left: calc(60 * var(--u)); top: calc(440 * var(--u)); display: flex; gap: calc(20 * var(--u)); }
+.cr-botoes span { height: calc(60 * var(--u)); padding: 0 calc(28 * var(--u)); border-radius: calc(30 * var(--u)); font-weight: 700; font-size: calc(19 * var(--u));
+  line-height: calc(60 * var(--u)); white-space: nowrap; }
+.cr-b1 { background: var(--cr-ac); color: var(--cr-sobre); }
+.cr-b2 { box-shadow: inset 0 0 0 calc(3 * var(--u)) var(--cr-mu); }
+.cr-minis { position: absolute; left: calc(60 * var(--u)); top: calc(570 * var(--u)); display: flex; gap: calc(30 * var(--u)); }
+.cr-mini { position: relative; width: calc(340 * var(--u)); height: calc(320 * var(--u)); border-radius: calc(22 * var(--u)); background: var(--cr-mu); overflow: hidden; }
+.cr-mini-img { height: calc(176 * var(--u)); background: #0b1830; }
+.cr-mini-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cr-mini-img.topo img { object-position: top; }
+.cr-mini-img.inteira img { object-fit: contain; }
+.cr-mini-logo { margin: calc(24 * var(--u)) calc(24 * var(--u)) 0; height: calc(150 * var(--u)); border-radius: calc(14 * var(--u)); background: #fff; display: flex; align-items: center; justify-content: center; gap: calc(12 * var(--u)); padding: 0 calc(12 * var(--u)); }
+.cr-mini-logo img { max-height: calc(100 * var(--u)); max-width: 100%; min-width: 0; flex: 1; object-fit: contain; }
+.cr-mini-num { display: block; margin: calc(62 * var(--u)) 0 0 calc(30 * var(--u)); color: var(--cr-ac); font-weight: 800; font-size: calc(64 * var(--u)); line-height: 1; }
+.cr-mini-num.longo { font-size: calc(50 * var(--u)); }
+.cr-mini-icone { margin: calc(30 * var(--u)) 0 0 calc(30 * var(--u)); width: calc(60 * var(--u)); height: calc(60 * var(--u)); border-radius: calc(14 * var(--u)); background: var(--cr-ac); opacity: .85;
+  color: var(--cr-sobre); display: grid; place-items: center; font-weight: 800; font-size: calc(24 * var(--u)); }
+.cr-mini-tx { padding: calc(20 * var(--u)) calc(30 * var(--u)) 0; }
+.cr-mini-tx b { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: calc(23 * var(--u)); line-height: calc(28 * var(--u)); }
+.cr-mini-tx span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: calc(8 * var(--u)); font-size: calc(16 * var(--u)); line-height: calc(22 * var(--u)); opacity: .72; }
+.cr-mini.so-texto .cr-mini-tx span { -webkit-line-clamp: 3; }
+.cr-rodape { position: absolute; right: calc(60 * var(--u)); bottom: calc(26 * var(--u)); font-size: calc(14 * var(--u)); opacity: .45; }

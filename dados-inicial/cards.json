@@ -1,0 +1,2625 @@
+[
+  {
+    "id": "8f62677e-17d1-43f0-aff9-88933a04eb69",
+    "title": "Início",
+    "slug": "inicio",
+    "link": "#",
+    "thumbnail": "/cards/fundo-01.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "fundo": "claro",
+      "tag": "Concreto de prático, concreto de quem faz, concreto de construção civil.",
+      "titulo": "Há 20 anos ajudando fábricas de concreto a *produzir mais e lucrar de verdade*",
+      "texto": "Consultoria, missões empresariais, eventos, treinamentos e conteúdo para indústrias de blocos, pisos intertravados, pré-moldados e argamassas. Mais de 1.000 empresas atendidas no Brasil e no exterior.",
+      "imagem": "/mc/marca/simbolo-mundo-concreto-icones.webp",
+      "botoes": [
+        {
+          "texto": "Agendar um diagnóstico",
+          "link": "/diagnostico/",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Ver as soluções",
+          "link": "#lp-solucoes",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "numeros",
+          "fundo": "papel",
+          "tag": "Em números",
+          "titulo": "Duas décadas no chão de fábrica",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "empresas atendidas",
+              "texto": "",
+              "destaque": "1.000+",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "de consultoria no setor",
+              "texto": "",
+              "destaque": "20 anos",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "faturamento dos clientes",
+              "texto": "Estimativa, 12 meses.",
+              "destaque": "R$ 3,2 bi",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            },
+            {
+              "titulo": "estados + DF com atuação",
+              "texto": "",
+              "destaque": "27",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "municípios com empresas atendidas",
+              "texto": "",
+              "destaque": "572",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "parceiros nacionais e internacionais",
+              "texto": "",
+              "destaque": "40+",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            }
+          ]
+        }
+      ]
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "01 · Início",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Há 20 anos ajudando fábricas de concreto a produzir mais e lucrar de verdade",
+      "texto": "Consultoria, missões empresariais, eventos, treinamentos e conteúdo para indústrias de blocos, pisos intertravados, pré-moldados e argamassas.",
+      "botao1": "Agendar um diagnóstico",
+      "botao2": "Ver as soluções",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#818cf8",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "numero",
+          "titulo": "Empresas atendidas",
+          "texto": "No Brasil e no exterior, em 20 anos de consultoria no setor.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "1.000+",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Faturamento dos clientes",
+          "texto": "Estimativa dos últimos 12 meses.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "R$ 3,2 bi",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Municípios atendidos",
+          "texto": "Atuação em 27 estados + DF e mais de 40 parceiros.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "572",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "66f47653-bfc4-4549-bce2-e6b8ff596e2d",
+    "title": "Quem somos",
+    "slug": "quem-somos",
+    "link": "#",
+    "thumbnail": "/cards/fundo-02.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/fotos/filipe-honorato.jpg",
+      "botoes": [
+        {
+          "texto": "Falar com a equipe",
+          "link": "#lp-contato",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Ver as soluções",
+          "link": "#lp-solucoes",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "citacao",
+          "fundo": "ardosia",
+          "tag": "",
+          "titulo": "Msc. Eng. Filipe Honorato, CEO do Mundo Concreto",
+          "texto": "Construir é um projeto perfeito, com responsabilidade, previsível, quantificável e escalável, a um preço competitivo e que encanta e atende perfeitamente o cliente.",
+          "imagem": "",
+          "botoes": [],
+          "itens": []
+        },
+        {
+          "tipo": "cards",
+          "fundo": "claro",
+          "tag": "Nossos pilares",
+          "titulo": "Quatro pilares",
+          "texto": "",
+          "imagem": "/mc/fotos/quem-somos-pilares.jpg",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Estratégia",
+              "texto": "Visão clara, metas concretas: quem mede, evolui.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Conexão",
+              "texto": "Fortalecemos laços que constroem oportunidades.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            },
+            {
+              "titulo": "Intercâmbio",
+              "texto": "Experiências globais moldando soluções locais.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Inovação",
+              "texto": "Tecnologia e mentalidade criativa para transformar a indústria.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "cards",
+          "fundo": "papel",
+          "tag": "Nosso propósito",
+          "titulo": "Missão, visão e valores",
+          "texto": "",
+          "imagem": "/mc/fotos/missao-visao-valores.jpg",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Missão",
+              "texto": "Fortalecer o setor de artefatos de cimento no Brasil, promovendo o desenvolvimento técnico, a inovação, a rentabilidade líquida e o empreendedorismo.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Visão",
+              "texto": "Ser o principal hub de empresas do setor de produtos à base de cimento do Brasil.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Valores",
+              "texto": "Excelência técnica e inovação com foco em resultados, conectando fábricas e especialistas para impulsionar o setor.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Quem somos",
+      "titulo": "Engenharia, gestão e conexão para a indústria de *artefatos de cimento*",
+      "texto": "20 anos de consultoria para a construção civil, com ênfase em artefatos e pré-moldados de concreto. Uma equipe técnica de várias áreas, com parceiros no Brasil, na América do Sul, nos Estados Unidos e na Europa."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "02 · Quem somos",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Engenharia, gestão e conexão para a indústria de artefatos de cimento",
+      "texto": "20 anos de consultoria, equipe técnica de várias áreas e parceiros no Brasil, na América do Sul, nos Estados Unidos e na Europa.",
+      "botao1": "Falar com a equipe",
+      "botao2": "Ver as soluções",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#f5f5f5",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Filipe Honorato",
+          "texto": "Msc. Eng., CEO do Mundo Concreto.",
+          "img": "/mc/fotos/filipe-honorato.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Quatro pilares",
+          "texto": "Estratégia, conexão, intercâmbio e inovação.",
+          "img": "/mc/fotos/quem-somos-pilares.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Missão, visão e valores",
+          "texto": "Ser o principal hub do setor de produtos à base de cimento.",
+          "img": "/mc/fotos/missao-visao-valores.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "04d6c808-97a8-4b14-80a5-094aa44d5d30",
+    "title": "Soluções",
+    "slug": "solucoes",
+    "link": "#",
+    "thumbnail": "/cards/fundo-03.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "",
+      "botoes": [
+        {
+          "texto": "Agendar um diagnóstico",
+          "link": "/diagnostico/",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Ver o sistema",
+          "link": "#lp-erp-gc-app",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "claro",
+          "tag": "As seis frentes",
+          "titulo": "Escolha por onde começar",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "ERP GC APP",
+              "texto": "Produção, qualidade e manutenção num só sistema, com indicadores automáticos.",
+              "destaque": "Ver o sistema",
+              "img": "/mc/app/monitoramento-ao-vivo.jpg",
+              "cor": "amarelo",
+              "link": "#lp-erp-gc-app"
+            },
+            {
+              "titulo": "Consultorias",
+              "texto": "Montagem, reestruturação, performance, estratégia, OEE, PDE e selo, mentoria.",
+              "destaque": "Ver as consultorias",
+              "img": "/mc/fotos/consultoria/filipe-campo-2.jpg",
+              "cor": "verde",
+              "link": "#lp-consultorias"
+            },
+            {
+              "titulo": "PDE Nacional e workshops",
+              "texto": "Eventos técnicos e de mercado pelas capitais do Brasil.",
+              "destaque": "Ver os eventos",
+              "img": "/mc/fotos/pde/pde-plateia.jpg",
+              "cor": "azul",
+              "link": "#lp-pde-e-eventos"
+            },
+            {
+              "titulo": "Missões empresariais",
+              "texto": "Viagens técnicas próprias e roteiros sob demanda, no Brasil e no exterior.",
+              "destaque": "Ver as missões",
+              "img": "/mc/fotos/missoes/china-2026.jpg",
+              "cor": "amarelo",
+              "link": "#lp-missoes-empresariais"
+            },
+            {
+              "titulo": "Treinamentos setoriais",
+              "texto": "Trilhas por função, presenciais e na Plataforma de Membros.",
+              "destaque": "Ver as trilhas",
+              "img": "/mc/app/plataforma-cursos.jpg",
+              "cor": "verde",
+              "link": "#lp-treinamentos-setoriais"
+            },
+            {
+              "titulo": "Podcast Conexão Concreta",
+              "texto": "O primeiro podcast do setor de pré-fabricados de concreto do Brasil.",
+              "destaque": "Ouvir episódios",
+              "img": "/mc/marca/podcast-conexao-concreta.png",
+              "cor": "laranja",
+              "link": "#lp-podcast-conexao-concreta"
+            }
+          ]
+        }
+      ],
+      "fundo": "papel",
+      "tag": "Soluções",
+      "titulo": "Seis frentes, um objetivo: *o lucro da sua fábrica*",
+      "texto": "ERP GC APP, consultorias, PDE Nacional e workshops, missões empresariais, treinamentos setoriais e o podcast Conexão Concreta."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "03 · Soluções",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Seis frentes, um objetivo: o lucro da sua fábrica",
+      "texto": "ERP GC APP, consultorias, PDE Nacional e workshops, missões empresariais, treinamentos setoriais e o podcast Conexão Concreta.",
+      "botao1": "Agendar um diagnóstico",
+      "botao2": "Ver o sistema",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#f97316",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "ERP GC APP",
+          "texto": "Produção, qualidade e manutenção num só sistema.",
+          "img": "/mc/app/monitoramento-ao-vivo.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Consultorias",
+          "texto": "Montagem, performance, estratégia, OEE, PDE e mentoria.",
+          "img": "/mc/fotos/consultoria/filipe-campo-2.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Missões empresariais",
+          "texto": "Viagens técnicas no Brasil e no exterior.",
+          "img": "/mc/fotos/missoes/china-2026.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "86bd95b5-0f52-4159-995a-adb9e8f10240",
+    "title": "ERP GC APP",
+    "slug": "erp-gc-app",
+    "link": "#",
+    "thumbnail": "/cards/fundo-04.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "fundo": "marinho",
+      "tag": "ERP GC APP",
+      "titulo": "Dados confiáveis do chão de fábrica, *em tempo real*",
+      "texto": "Uma ferramenta profissional para acompanhar a produção, gerar relatórios precisos e transformar dados em lucro, com consultoria especializada junto. Desenvolvido pela Gestão Concreta, parceira do Mundo Concreto.",
+      "imagem": "/mc/app/monitoramento-ao-vivo.jpg",
+      "botoes": [
+        {
+          "texto": "Entrar no GC APP",
+          "link": "#",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Pedir uma demonstração",
+          "link": "#lp-contato",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "marinho",
+          "tag": "Recursos",
+          "titulo": "Tudo o que a fábrica precisa enxergar",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Monitoramento em tempo real",
+              "texto": "Produção, paradas e refugo registrados no momento em que acontecem, com câmeras e IA contando ciclos e peças.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Indicadores automáticos",
+              "texto": "OEE por turno, por linha e por máquina, com disponibilidade, performance e qualidade. Sem planilha.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Qualidade e manutenção no mesmo lugar",
+              "texto": "Ensaios pela NBR, laudos, refugo por lote e histórico de cada equipamento.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Suporte técnico imediato",
+              "texto": "Alertas de rotina e demandas críticas no celular, e engenheiros do setor acompanhando a implantação.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "galeria",
+          "fundo": "claro",
+          "tag": "Telas reais",
+          "titulo": "Telas reais do GC APP",
+          "texto": "Os alertas chegam direto no celular da equipe.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Produção ao vivo",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/monitoramento-ao-vivo.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "PPCP e OEE",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/producao-ppcp-oee.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Qualidade",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/dashboard-qualidade.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Análise de blocos",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/analise-de-blocos.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Alertas no celular",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/alertas-celular.jpg",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "numeros",
+          "fundo": "marinho",
+          "tag": "Ganhos",
+          "titulo": "O que as fábricas ganham",
+          "texto": "Resultados máximos informados pela Gestão Concreta. Cada fábrica tem o seu ponto de partida.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "mais produtividade média",
+              "texto": "",
+              "destaque": "até 25%",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "menos custos operacionais",
+              "texto": "",
+              "destaque": "até 30%",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "menos tempo de ciclo",
+              "texto": "",
+              "destaque": "até 40%",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        }
+      ]
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "04 · ERP GC APP",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Dados confiáveis do chão de fábrica, em tempo real",
+      "texto": "Acompanhe a produção, gere relatórios precisos e transforme dados em lucro. Desenvolvido pela Gestão Concreta, parceira do Mundo Concreto.",
+      "botao1": "Entrar no GC APP",
+      "botao2": "Pedir uma demonstração",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#0f766e",
+      "corTexto": "#111827",
+      "suave": "rgba(0,0,0,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Monitoramento em tempo real",
+          "texto": "Produção, paradas e refugo no momento em que acontecem.",
+          "img": "/mc/app/monitoramento-ao-vivo.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Indicadores automáticos",
+          "texto": "OEE por turno, por linha e por máquina. Sem planilha.",
+          "img": "/mc/app/producao-ppcp-oee.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Qualidade e manutenção",
+          "texto": "Ensaios pela NBR, laudos e histórico de cada equipamento.",
+          "img": "/mc/app/dashboard-qualidade.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "a68fd902-09be-4caf-b97f-cd205a2ed2c0",
+    "title": "Consultorias",
+    "slug": "consultorias",
+    "link": "#",
+    "thumbnail": "/cards/fundo-05.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/fotos/consultoria/filipe-campo-1.jpg",
+      "botoes": [
+        {
+          "texto": "Falar com um consultor",
+          "link": "#lp-contato",
+          "estilo": "ardosia"
+        },
+        {
+          "texto": "Agendar um diagnóstico",
+          "link": "/diagnostico/",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "papel",
+          "tag": "O que fazemos",
+          "titulo": "Seis consultorias, do projeto à rotina",
+          "texto": "Também oferecemos assessoria técnica e manutenção de equipamentos, e planilhas de controle e gestão: qualidade (SGQ), financeira e técnica.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Montagem e reestruturação de indústria",
+              "texto": "Da viabilidade, escolha de máquinas e layout à partida da fábrica. Ou a reorganização de uma operação que parou de crescer.",
+              "destaque": "01",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Performance industrial, geral e segmentada",
+              "texto": "Custos, produtividade e margem por produto e por linha, em busca do lucro que hoje escapa.",
+              "destaque": "02",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Estratégia e posicionamento",
+              "texto": "Mix de produtos, canais de venda, preço e região de atuação definidos com dados de mercado.",
+              "destaque": "03",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "OEE na prática",
+              "texto": "Análise da operação e das paradas de equipamento, com causa raiz e um plano que a equipe consegue manter.",
+              "destaque": "04",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "PDE e Selo de Qualidade",
+              "texto": "Preparação da fábrica para os requisitos do PDE e do Selo de Qualidade: processos, ensaios, registros e auditoria.",
+              "destaque": "05",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Mentoria empresarial",
+              "texto": "Acompanhamento direto do empresário em gestão, investimento, profissionalização, sucessão e governança.",
+              "destaque": "06",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "galeria",
+          "fundo": "ardosia",
+          "tag": "20 anos no chão de fábrica",
+          "titulo": "A consultoria acontece na fábrica",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Orientando a equipe no pátio de uma fábrica",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/consultoria/filipe-campo-1.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Conversa com o gestor na área de manutenção",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/consultoria/filipe-campo-2.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Visita técnica à linha de produção",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/consultoria/filipe-campo-3.jpg",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Consultorias em artefatos e pré-moldados de concreto",
+      "titulo": "Não é teoria: é *conhecimento prático* aplicado",
+      "texto": "Mais de 1.000 empresas atendidas em 20 anos, com ênfase em engenharia, administração, economia, finanças e desenvolvimento de negócios."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "05 · Consultorias",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Não é teoria: é conhecimento prático aplicado",
+      "texto": "Mais de 1.000 empresas atendidas em 20 anos, com ênfase em engenharia, administração, economia, finanças e desenvolvimento de negócios.",
+      "botao1": "Falar com um consultor",
+      "botao2": "Agendar um diagnóstico",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#22d3ee",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Montagem e reestruturação",
+          "texto": "Da viabilidade e do layout à partida da fábrica.",
+          "img": "/mc/fotos/consultoria/filipe-campo-1.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Performance industrial",
+          "texto": "Custos, produtividade e margem por produto e por linha.",
+          "img": "/mc/fotos/consultoria/filipe-campo-3.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "OEE na prática",
+          "texto": "Paradas, causa raiz e um plano que a equipe consegue manter.",
+          "img": "/mc/fotos/consultoria/filipe-campo-2.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "608592cc-7857-4071-972c-f0ca3753d973",
+    "title": "PDE e eventos",
+    "slug": "pde-e-eventos",
+    "link": "#",
+    "thumbnail": "/cards/fundo-06.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/fotos/pde/workshop-filipe.jpg",
+      "botoes": [
+        {
+          "texto": "Ver a agenda de eventos",
+          "link": "#lp-contato",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Levar um evento para a minha região",
+          "link": "#lp-contato",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "claro",
+          "tag": "Formatos",
+          "titulo": "Eventos para cada momento do setor",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "PDE Nacional",
+              "texto": "Palestras, workshops e casos de fábricas sobre máquinas, tecnologia, performance financeira, sucessão, governança, normas, marketing e vendas.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Novidade 2026: PDM",
+              "texto": "O Programa de Desenvolvimento de Mercado acompanha o PDE para estimular o uso de soluções em artefatos de concreto.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Workshops de construção civil",
+              "texto": "Formatos de meio dia ou um dia para construtoras, revendas, projetistas e fábricas, com entidades locais.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Palestra em destaque",
+              "texto": "A fábrica ideal: pensando para 10 anos e múltiplos produtos. Com Filipe Honorato.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "galeria",
+          "fundo": "ardosia",
+          "tag": "Galeria",
+          "titulo": "Fotos dos eventos",
+          "texto": "PDE Nacional, PDM e workshops: álbuns completos no Google Drive.",
+          "imagem": "",
+          "botoes": [
+            {
+              "texto": "Ver álbum completo",
+              "link": "https://drive.google.com/drive/folders/14RDGlbTEhYzv2hXmAK3AzoVEhHoMsyjL?usp=sharing",
+              "estilo": "contorno"
+            }
+          ],
+          "itens": [
+            {
+              "titulo": "Workshop Impulsionando a indústria de artefatos no Brasil",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/pde/workshop-filipe.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Conexão Mercado & Artefatos · Serra Gaúcha/RS",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/pde/pde-serra-gaucha.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Empresários do setor reunidos no PDE",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/pde/pde-plateia.jpg",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "ardosia",
+      "tag": "PDE Nacional e workshops de construção civil",
+      "titulo": "Impulsionando a indústria de artefatos no Brasil: *inovação, mercado e tecnologia*",
+      "texto": "Uma sequência de eventos pelas capitais para desenvolver a indústria de artefatos de cimento e pré-moldados, estimular o mercado e gerar novas soluções. Realização com a ABCP."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "06 · PDE e eventos",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Impulsionando a indústria de artefatos no Brasil: inovação, mercado e tecnologia",
+      "texto": "Uma sequência de eventos pelas capitais para desenvolver a indústria de artefatos de cimento e pré-moldados. Realização com a ABCP.",
+      "botao1": "Ver a agenda de eventos",
+      "botao2": "Levar um evento para a minha região",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#db2777",
+      "corTexto": "#111827",
+      "suave": "rgba(0,0,0,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "PDE Nacional",
+          "texto": "Palestras, workshops e casos de fábricas.",
+          "img": "/mc/fotos/pde/workshop-filipe.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Novidade 2026: PDM",
+          "texto": "Programa de Desenvolvimento de Mercado.",
+          "img": "/mc/fotos/pde/pde-plateia.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Workshops de construção civil",
+          "texto": "Meio dia ou um dia, com entidades locais.",
+          "img": "/mc/fotos/pde/pde-serra-gaucha.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "b292f3d6-5b34-4bd5-baf4-5f2ab180a942",
+    "title": "Missões empresariais",
+    "slug": "missoes-empresariais",
+    "link": "#",
+    "thumbnail": "/cards/fundo-07.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/fotos/missoes/china-2026.jpg",
+      "botoes": [
+        {
+          "texto": "Quero participar da próxima missão",
+          "link": "#lp-contato",
+          "estilo": "ardosia"
+        },
+        {
+          "texto": "Montar uma missão sob demanda",
+          "link": "#lp-contato",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "etiquetas",
+          "fundo": "papel",
+          "tag": "Destinos",
+          "titulo": "Para onde já levamos empresários",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "China",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Alemanha",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Itália",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "França",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Espanha",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Sérvia",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Chile",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "cards",
+          "fundo": "claro",
+          "tag": "Roteiros",
+          "titulo": "Missões realizadas e formatos",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Missão China",
+              "texto": "Hong Kong, Macau, Shanghai, Guangzhou e Quanzhou. Fábricas de pisos, blocos, tubos e moldes, escritórios de projeto, obras e a feira CCPA.",
+              "destaque": "Realizada de 13 a 23 de setembro de 2026",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Missão Alemanha",
+              "texto": "Roteiro técnico pela Alemanha: fabricantes de máquinas para blocos e pisos, moldes e fôrmas, fábricas de artefatos e pré-moldados de referência e centros de tecnologia do concreto.",
+              "destaque": "Realizada de 18 a 28 de janeiro de 2026",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Missões próprias",
+              "texto": "Calendário anual do Mundo Concreto, em grupo de empresários do setor. Mais de 50 intercâmbios nacionais em SP, MG, SC, RJ e outros estados.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Missões sob demanda",
+              "texto": "Roteiro desenhado para a sua empresa ou entidade: fábricas, fornecedores e feiras escolhidos a partir do seu objetivo.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "numeros",
+          "fundo": "ardosia",
+          "tag": "Clube Mundo Concreto",
+          "titulo": "Fabricantes que trocam experiências",
+          "texto": "Fabricantes que são referência na sua área trocam experiências, fazem compras coletivas e têm condições especiais nas missões.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "fabricantes no Clube Mundo Concreto",
+              "texto": "",
+              "destaque": "25",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "visitas de intercâmbio entre empresas",
+              "texto": "",
+              "destaque": "70+",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "intercâmbios nacionais",
+              "texto": "",
+              "destaque": "50+",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "galeria",
+          "fundo": "claro",
+          "tag": "Galeria",
+          "titulo": "Fotos das missões",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Missão China 2026",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/china-2026.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Bauma 2025, Munique (Alemanha)",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/bauma-alemanha-2025.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Visita técnica, Alemanha 2025",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/visita-tecnica-alemanha-2025.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Missão China 2024",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/china-2024.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Visita técnica, China 2026",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/visita-tecnica-china-2026.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Intercâmbio nacional: fábrica de tubos",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/intercambio-nacional-2024.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Intercâmbio nacional: fábrica de equipamentos",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/intercambio-nacional-2024-b.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Intercâmbio nacional 2026",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/intercambio-nacional-2026.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Missão Europa 2025, Espanha",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/fotos/missoes/missao-europa-2025.jpg",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "papel",
+      "tag": "Missões empresariais",
+      "titulo": "Conectar mentes que *moldam estruturas*",
+      "texto": "Visitas técnicas a fábricas, fabricantes de máquinas, escritórios de projeto e feiras, com acompanhamento técnico, networking e geração de negócios."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "07 · Missões empresariais",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Conectar mentes que moldam estruturas",
+      "texto": "Visitas técnicas a fábricas, fabricantes de máquinas, escritórios de projeto e feiras, com networking e geração de negócios.",
+      "botao1": "Quero participar da próxima missão",
+      "botao2": "Montar uma missão sob demanda",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#facc15",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Missão China",
+          "texto": "Realizada de 13 a 23 de setembro de 2026.",
+          "img": "/mc/fotos/missoes/visita-tecnica-china-2026.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Missão Alemanha",
+          "texto": "Realizada de 18 a 28 de janeiro de 2026.",
+          "img": "/mc/fotos/missoes/bauma-alemanha-2025.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Missões próprias e sob demanda",
+          "texto": "Mais de 50 intercâmbios nacionais.",
+          "img": "/mc/fotos/missoes/intercambio-nacional-2026.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "3b901819-655e-4b9d-b616-710e88440399",
+    "title": "Treinamentos setoriais",
+    "slug": "treinamentos-setoriais",
+    "link": "#",
+    "thumbnail": "/cards/fundo-08.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/app/plataforma-boas-vindas.jpg",
+      "botoes": [
+        {
+          "texto": "Conhecer a plataforma",
+          "link": "https://gestaoconcreta.app.cativa.digital/showcase/92802717-e64b-4e84-b713-08de93db0d60",
+          "estilo": "ardosia"
+        },
+        {
+          "texto": "Pedir um treinamento in company",
+          "link": "#lp-contato",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "papel",
+          "tag": "Trilhas por função",
+          "titulo": "Uma trilha para cada pessoa da fábrica",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Operação de vibroprensa",
+              "texto": "Ciclo, regulagem, troca de molde e cuidados diários.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Laboratório e qualidade",
+              "texto": "Traço, ensaios, cura e controle por bandeja.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            },
+            {
+              "titulo": "Manutenção industrial",
+              "texto": "Preventiva, lubrificação e manutenção dimensional.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Liderança e rotina",
+              "texto": "Metas, reuniões curtas e gestão à vista com OEE e 5S.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Custos e finanças",
+              "texto": "Margem por produto, ponto de equilíbrio e fluxo de caixa.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            },
+            {
+              "titulo": "Marketing e vendas",
+              "texto": "Venda consultiva para construtoras, revendas e obras públicas.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "galeria",
+          "fundo": "marinho",
+          "tag": "Plataforma Gestão Concreta",
+          "titulo": "Telas reais da plataforma",
+          "texto": "Cursos, pílulas diárias, comunidade e eventos.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Boas-vindas",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/plataforma-boas-vindas.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Cursos",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/plataforma-cursos.jpg",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Comunidade",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/app/plataforma-comunidade.jpg",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Treinamentos setoriais",
+      "titulo": "Capacitação contínua para *cada função da fábrica*",
+      "texto": "Cursos, capacitações e treinamentos personalizados, na sua empresa ou online. Na plataforma Gestão Concreta: trilhas por função, certificados, e-books, palestras com especialistas, comunidade e inteligência artificial para tirar dúvidas."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "08 · Treinamentos setoriais",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Capacitação contínua para cada função da fábrica",
+      "texto": "Cursos e treinamentos personalizados, na sua empresa ou online, com trilhas por função, certificados, comunidade e IA para tirar dúvidas.",
+      "botao1": "Conhecer a plataforma",
+      "botao2": "Pedir um treinamento in company",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#a855f7",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Plataforma Gestão Concreta",
+          "texto": "Cursos, pílulas diárias, comunidade e eventos.",
+          "img": "/mc/app/plataforma-boas-vindas.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Trilhas por função",
+          "texto": "Vibroprensa, laboratório, manutenção, liderança, custos e vendas.",
+          "img": "/mc/app/plataforma-cursos.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "Comunidade",
+          "texto": "Troca entre profissionais do setor.",
+          "img": "/mc/app/plataforma-comunidade.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "7a794c3b-e787-436d-9c4d-7cb579aaa904",
+    "title": "Podcast Conexão Concreta",
+    "slug": "podcast-conexao-concreta",
+    "link": "#",
+    "thumbnail": "/cards/fundo-09.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/marca/podcast-conexao-concreta.webp",
+      "botoes": [
+        {
+          "texto": "Ouvir no Spotify",
+          "link": "#",
+          "estilo": "spotify"
+        },
+        {
+          "texto": "Assistir no YouTube",
+          "link": "#",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "numeros",
+          "fundo": "grafite",
+          "tag": "O formato",
+          "titulo": "Como é cada temporada",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "episódios por temporada",
+              "texto": "",
+              "destaque": "10",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "minutos por episódio",
+              "texto": "",
+              "destaque": "40 a 90",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "no YouTube, depois em áudio",
+              "texto": "",
+              "destaque": "Ao vivo",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "etiquetas",
+          "fundo": "claro",
+          "tag": "Temas",
+          "titulo": "Sobre o que conversamos",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Processo produtivo",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Manutenção",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Automação",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Inovação",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Governança e sucessão",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Performance financeira",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Máquinas e equipamentos",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "texto",
+          "fundo": "ardosia",
+          "tag": "Patrocínio",
+          "titulo": "Anuncie no Conexão Concreta",
+          "texto": "Sua marca para donos e gestores de fábricas de pré-fabricados: patrocínio por episódio, por temporada ou master, com logomarca na tela, menções, inserções e cortes oficiais.",
+          "imagem": "",
+          "botoes": [
+            {
+              "texto": "Quero anunciar",
+              "link": "#lp-contato",
+              "estilo": "amarelo"
+            }
+          ],
+          "itens": []
+        }
+      ],
+      "fundo": "grafite",
+      "tag": "Podcast",
+      "titulo": "Conexão *Concreta*",
+      "texto": "O primeiro podcast do setor de pré-fabricados de concreto do Brasil. Conversas com quem decide o futuro da indústria, apresentadas por Msc. Eng. Filipe Honorato e Eng. Pedro de Aquino."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "09 · Podcast Conexão Concreta",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "O primeiro podcast do setor de pré-fabricados de concreto do Brasil",
+      "texto": "Conversas com quem decide o futuro da indústria, apresentadas por Msc. Eng. Filipe Honorato e Eng. Pedro de Aquino.",
+      "botao1": "Ouvir no Spotify",
+      "botao2": "Assistir no YouTube",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#38bdf8",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "logo",
+          "titulo": "Conexão Concreta",
+          "texto": "Ao vivo no YouTube, depois em áudio.",
+          "img": "/mc/marca/podcast-conexao-concreta.png",
+          "imgs": "",
+          "fundo": "#111111",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Episódios por temporada",
+          "texto": "De 40 a 90 minutos por episódio.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "10",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "icone",
+          "titulo": "Anuncie no Conexão Concreta",
+          "texto": "Patrocínio por episódio, por temporada ou master.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "$",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "e965dcdd-c449-4e6c-9996-013db1b1c5eb",
+    "title": "Resultados",
+    "slug": "resultados",
+    "link": "#",
+    "thumbnail": "/cards/fundo-10.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "",
+      "botoes": [
+        {
+          "texto": "Agendar um diagnóstico",
+          "link": "/diagnostico/",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Falar com a equipe",
+          "link": "#lp-contato",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "numeros",
+          "fundo": "ardosia",
+          "tag": "Casos",
+          "titulo": "Resultados de clientes",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Pisos drenantes · Empresa Alpha",
+              "texto": "Fábrica com 20 anos sem padrão, cuja resistência variava de 10 a 30 MPa, passou a trabalhar com resistência-alvo e espessura fixa. O custo por peça passou a ser medido.",
+              "destaque": "25 MPa",
+              "img": "",
+              "cor": "verde",
+              "link": ""
+            },
+            {
+              "titulo": "Linha complementar · Empresa Beta",
+              "texto": "Um pedido que quase foi recusado revelou uma linha de produtos com o dobro da margem líquida do piso intertravado.",
+              "destaque": "30% de margem",
+              "img": "",
+              "cor": "amarelo",
+              "link": ""
+            },
+            {
+              "titulo": "Programa Conexões Corporativas · SEBRAE/AM",
+              "texto": "Dez empresas acompanhadas com consultoria, 5S e ranking de evolução ao longo do programa.",
+              "destaque": "830 horas",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "papel",
+      "tag": "Experiência de clientes",
+      "titulo": "O que muda depois de trabalhar com o *Mundo Concreto*",
+      "texto": "Resultados medidos em fábricas atendidas pela consultoria."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "10 · Resultados",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "O que muda depois de trabalhar com o Mundo Concreto",
+      "texto": "Experiência de clientes: resultados medidos em fábricas atendidas pela consultoria.",
+      "botao1": "Agendar um diagnóstico",
+      "botao2": "Falar com a equipe",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#2563eb",
+      "corTexto": "#111827",
+      "suave": "rgba(0,0,0,.12)",
+      "mini": [
+        {
+          "tipo": "numero",
+          "titulo": "Pisos drenantes · Empresa Alpha",
+          "texto": "Resistência que variava de 10 a 30 MPa passou a ter alvo fixo.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "25 MPa",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Linha complementar · Empresa Beta",
+          "texto": "Uma linha com o dobro da margem líquida do piso intertravado.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "30%",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Conexões Corporativas · SEBRAE/AM",
+          "texto": "Dez empresas com consultoria, 5S e ranking de evolução.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "830 h",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "fef60960-fe03-49a8-b19b-b29814667cff",
+    "title": "Parceiros",
+    "slug": "parceiros",
+    "link": "#",
+    "thumbnail": "/cards/fundo-11.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "",
+      "botoes": [
+        {
+          "texto": "Propor uma parceria",
+          "link": "#lp-contato",
+          "estilo": "ardosia"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "logos",
+          "fundo": "papel",
+          "tag": "Parceiros",
+          "titulo": "Alguns dos nossos parceiros",
+          "texto": "São mais de 40 parceiros nacionais e internacionais. Acima, os que autorizaram a divulgação.",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "ABCP",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/parceiros/abcp.png",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "SEBRAE",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/parceiros/sebrae.png",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Besser",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/parceiros/besser.png",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Piorotti",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/parceiros/piorotti.png",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Rama",
+              "texto": "",
+              "destaque": "",
+              "img": "/mc/parceiros/rama.png",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "lista",
+          "fundo": "ardosia",
+          "tag": "Seja parceiro",
+          "titulo": "Vamos construir juntos",
+          "texto": "O Mundo Concreto fala todos os meses com milhares de donos e gestores de fábricas, com mais de 50 mil seguidores no Instagram. Se o seu produto resolve um problema deles, vamos construir juntos.",
+          "imagem": "",
+          "botoes": [
+            {
+              "texto": "Propor uma parceria",
+              "link": "#lp-contato",
+              "estilo": "amarelo"
+            }
+          ],
+          "itens": [
+            {
+              "titulo": "Patrocínio do PDE Nacional",
+              "texto": "Presença da sua marca nos eventos pelas capitais.",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Missões empresariais",
+              "texto": "Representante na missão, almoço ou jantar patrocinado e visibilidade com o grupo.",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Podcast Conexão Concreta",
+              "texto": "Cotas por episódio, por temporada ou master.",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Feiras e estandes",
+              "texto": "Presença do CEO no seu estande em feiras como a Concrete Show, com entrevista, fotos e vídeo.",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Livro Fábrica",
+              "texto": "Patrocínio de edição, com exemplares para os seus clientes e um evento sobre o tema.",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Parceiros",
+      "titulo": "Quem constrói essa *rede com a gente*",
+      "texto": "Entidades do setor e fabricantes de máquinas do Brasil e do exterior que participam dos eventos, das missões e dos projetos do Mundo Concreto."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "11 · Parceiros",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Quem constrói essa rede com a gente",
+      "texto": "Entidades do setor e fabricantes de máquinas do Brasil e do exterior que participam dos eventos, das missões e dos projetos.",
+      "botao1": "Propor uma parceria",
+      "botao2": "Seja parceiro",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#e4e4e7",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "logos",
+          "titulo": "Entidades do setor",
+          "texto": "ABCP e SEBRAE.",
+          "img": "",
+          "imgs": "/mc/parceiros/abcp.png, /mc/parceiros/sebrae.png",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "logos",
+          "titulo": "Fabricantes de máquinas",
+          "texto": "Besser, Piorotti e Rama.",
+          "img": "",
+          "imgs": "/mc/parceiros/besser.png, /mc/parceiros/piorotti.png, /mc/parceiros/rama.png",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Parceiros nacionais e internacionais",
+          "texto": "Mais de 50 mil seguidores no Instagram.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "40+",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "16ea4bba-2797-4f1d-9a46-daa5862606e7",
+    "title": "Cabeçalho",
+    "slug": "cabecalho",
+    "link": "#",
+    "thumbnail": "/cards/fundo-12.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/marca/logo-mundo-concreto-horizontal.png",
+      "botoes": [
+        {
+          "texto": "Entrar no GC APP",
+          "link": "#",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Plataforma de Membros",
+          "link": "#",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "papel",
+          "tag": "Menu",
+          "titulo": "Vá direto ao assunto",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Quem somos",
+              "texto": "Engenharia, gestão e conexão para a indústria.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#lp-quem-somos"
+            },
+            {
+              "titulo": "Soluções",
+              "texto": "Seis frentes, um objetivo: o lucro da sua fábrica.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#lp-solucoes"
+            },
+            {
+              "titulo": "Missões",
+              "texto": "Viagens técnicas no Brasil e no exterior.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": "#lp-missoes-empresariais"
+            },
+            {
+              "titulo": "Podcast",
+              "texto": "O podcast Conexão Concreta.",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": "#lp-podcast-conexao-concreta"
+            },
+            {
+              "titulo": "Clientes",
+              "texto": "Experiência e resultados de clientes.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#lp-resultados"
+            },
+            {
+              "titulo": "Parceiros",
+              "texto": "Quem constrói essa rede com a gente.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#lp-parceiros"
+            },
+            {
+              "titulo": "Falar com a equipe",
+              "texto": "Conte o que está acontecendo na sua fábrica.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": "#lp-contato"
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Menu e acessos",
+      "titulo": "Tudo do *Mundo Concreto* em um só lugar",
+      "texto": "Quem somos, Soluções, Missões, Podcast, Clientes, Parceiros e Falar com a equipe."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "12 · Cabeçalho",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Menu e acessos do Mundo Concreto",
+      "texto": "Quem somos, Soluções, Missões, Podcast, Clientes, Parceiros e Falar com a equipe.",
+      "botao1": "Entrar no GC APP",
+      "botao2": "Plataforma de Membros",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#92400e",
+      "corTexto": "#111827",
+      "suave": "rgba(0,0,0,.12)",
+      "mini": [
+        {
+          "tipo": "logo",
+          "titulo": "Marca Mundo Concreto",
+          "texto": "Logo no canto esquerdo do menu.",
+          "img": "/mc/marca/logo-mundo-concreto-horizontal.png",
+          "imgs": "",
+          "fundo": "#ffffff",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "logo",
+          "titulo": "Entrar no GC APP",
+          "texto": "Acesso direto ao ERP da Gestão Concreta.",
+          "img": "/mc/marca/logo-gestao-concreta-branco.png",
+          "imgs": "",
+          "fundo": "#111111",
+          "destaque": "",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "E-book OEE",
+          "texto": "Atalho para o e-book no topo do site.",
+          "img": "/mc/fotos/ebook-oee.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "topo"
+        }
+      ]
+    }
+  },
+  {
+    "id": "275960be-e91a-44b4-834b-a5c77e63db28",
+    "title": "Livro e e-book",
+    "slug": "livro-e-e-book",
+    "link": "#",
+    "thumbnail": "/cards/fundo-13.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "/mc/fotos/livro-fabrica.jpg",
+      "botoes": [
+        {
+          "texto": "Quero o livro",
+          "link": "#lp-contato",
+          "estilo": "ardosia"
+        },
+        {
+          "texto": "Ver também o e-book OEE",
+          "link": "#bloco-2",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "etiquetas",
+          "fundo": "papel",
+          "tag": "No livro",
+          "titulo": "O que você encontra",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "50 estudos de caso",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Formulários prontos",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Croquis do dia a dia",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "1ª edição esgotada",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "etiquetas",
+          "fundo": "marinho",
+          "tag": "E-book técnico · 2026",
+          "titulo": "Parou *por quê?* Da bandeja ao resultado",
+          "texto": "O impacto da Eficácia Global do Equipamento (OEE) na lucratividade da sua fábrica de artefatos de concreto e pré-moldados. Um guia prático para medir, entender as paradas e transformar produção em lucro.\n\nPor Msc. Eng. Filipe Honorato, CEO do Mundo Concreto e autor de Fábrica: Operação Simples e Lucrativa.",
+          "imagem": "/mc/fotos/ebook-oee.jpg",
+          "botoes": [
+            {
+              "texto": "Quero o e-book",
+              "link": "#lp-contato",
+              "estilo": "teal"
+            },
+            {
+              "texto": "Medir o OEE no GC APP",
+              "link": "#lp-erp-gc-app",
+              "estilo": "contorno"
+            }
+          ],
+          "itens": [
+            {
+              "titulo": "Os 3 pilares do OEE",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Como calcular",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Desvio-padrão e cimento",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Custo e rentabilidade",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Posicionamento de mercado",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Casos reais",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Plano de 90 dias",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "claro",
+      "tag": "Livro · Editora Viseu",
+      "titulo": "Fábrica: *Operação Simples e Lucrativa*",
+      "texto": "Mais de 50 estudos de caso, formulários e croquis do dia a dia de fábricas de artefatos e pré-moldados. A primeira edição, de 1.000 exemplares, esgotou em dois meses e meio. A segunda edição chega revisada e atualizada.\n\nPor Msc. Eng. Filipe Honorato, CEO do Mundo Concreto."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "13 · Livro e e-book",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Fábrica: Operação Simples e Lucrativa e o e-book Parou por quê?",
+      "texto": "O livro com mais de 50 estudos de caso e o guia prático do OEE, de Msc. Eng. Filipe Honorato.",
+      "botao1": "Quero o livro",
+      "botao2": "Quero o e-book",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#fbbf24",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "foto",
+          "titulo": "Livro Fábrica",
+          "texto": "Editora Viseu. 1ª edição de 1.000 exemplares esgotada.",
+          "img": "/mc/fotos/livro-fabrica.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "inteira"
+        },
+        {
+          "tipo": "foto",
+          "titulo": "E-book Parou por quê?",
+          "texto": "Da bandeja ao resultado: OEE e lucratividade.",
+          "img": "/mc/fotos/ebook-oee.jpg",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "",
+          "ajuste": "topo"
+        },
+        {
+          "tipo": "numero",
+          "titulo": "Estudos de caso",
+          "texto": "Formulários prontos e croquis do dia a dia da fábrica.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "50+",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "664cbb2f-f888-4a7c-8562-dbb098441cd8",
+    "title": "Contato",
+    "slug": "contato",
+    "link": "#",
+    "thumbnail": "/cards/fundo-14.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "imagem": "",
+      "botoes": [
+        {
+          "texto": "Chamar no WhatsApp",
+          "link": "#",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Enviar e-mail",
+          "link": "#",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "claro",
+          "tag": "Canais",
+          "titulo": "Fale com a equipe",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "WhatsApp",
+              "texto": "Atendimento comercial direto com a equipe.",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#"
+            },
+            {
+              "titulo": "E-mail",
+              "texto": "Nome, empresa, cidade, assunto e mensagem. Seus dados são usados só para responder ao contato, conforme a LGPD.",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#"
+            },
+            {
+              "titulo": "Onde estamos",
+              "texto": "Itatiaia/RJ · atendimento em todo o Brasil, na América do Sul, nos Estados Unidos e na Europa.",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": ""
+            }
+          ]
+        },
+        {
+          "tipo": "etiquetas",
+          "fundo": "papel",
+          "tag": "Assuntos",
+          "titulo": "Sobre o que você quer falar?",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Consultoria",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "ERP GC APP",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "PDE Nacional e workshops",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Missões empresariais",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Treinamentos",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Podcast Conexão Concreta",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            },
+            {
+              "titulo": "Parceria",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "",
+              "link": ""
+            }
+          ]
+        }
+      ],
+      "fundo": "ardosia",
+      "tag": "Contato",
+      "titulo": "Conte o que está acontecendo *na sua fábrica*",
+      "texto": "Respondemos em até um dia útil. Se preferir, chame direto no WhatsApp."
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "14 · Contato",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Conte o que está acontecendo na sua fábrica",
+      "texto": "Respondemos em até um dia útil. Se preferir, chame direto no WhatsApp.",
+      "botao1": "Enviar mensagem",
+      "botao2": "WhatsApp",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#4ade80",
+      "corTexto": "#f9fafb",
+      "suave": "rgba(255,255,255,.12)",
+      "mini": [
+        {
+          "tipo": "icone",
+          "titulo": "WhatsApp",
+          "texto": "Atendimento comercial direto com a equipe.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "W",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "icone",
+          "titulo": "Formulário e e-mail",
+          "texto": "Nome, empresa, cidade, assunto e mensagem, conforme a LGPD.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "@",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "icone",
+          "titulo": "Onde estamos",
+          "texto": "Itatiaia/RJ, com atendimento no Brasil, América do Sul, EUA e Europa.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "RJ",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  },
+  {
+    "id": "912469dc-7752-4da5-bf26-47f08465d3a2",
+    "title": "Rodapé",
+    "slug": "rodape",
+    "link": "#",
+    "thumbnail": "/cards/fundo-15.svg",
+    "active": true,
+    "landing": {
+      "ativa": true,
+      "fundo": "grafite",
+      "tag": "Concreto de prático, concreto de quem faz, concreto de construção civil.",
+      "titulo": "Mundo *Concreto*",
+      "texto": "Links de soluções, acessos e pessoas do Mundo Concreto. ERP GC APP por Gestão Concreta.",
+      "imagem": "/mc/marca/logo-mundo-concreto-horizontal-branco.png",
+      "botoes": [
+        {
+          "texto": "Falar com a equipe",
+          "link": "#lp-contato",
+          "estilo": "amarelo"
+        },
+        {
+          "texto": "Política de privacidade",
+          "link": "#",
+          "estilo": "contorno"
+        }
+      ],
+      "blocos": [
+        {
+          "tipo": "cards",
+          "fundo": "grafite",
+          "tag": "Soluções",
+          "titulo": "Soluções",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "ERP GC APP",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#lp-erp-gc-app"
+            },
+            {
+              "titulo": "Consultorias",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#lp-consultorias"
+            },
+            {
+              "titulo": "PDE Nacional e workshops",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": "#lp-pde-e-eventos"
+            },
+            {
+              "titulo": "Missões empresariais",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#lp-missoes-empresariais"
+            },
+            {
+              "titulo": "Treinamentos setoriais",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#lp-treinamentos-setoriais"
+            },
+            {
+              "titulo": "Podcast Conexão Concreta",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": "#lp-podcast-conexao-concreta"
+            }
+          ]
+        },
+        {
+          "tipo": "cards",
+          "fundo": "ardosia",
+          "tag": "Acessos",
+          "titulo": "Acessos",
+          "texto": "",
+          "imagem": "",
+          "botoes": [],
+          "itens": [
+            {
+              "titulo": "Entrar no GC APP",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "amarelo",
+              "link": "#"
+            },
+            {
+              "titulo": "Plataforma de Membros",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "verde",
+              "link": "#"
+            },
+            {
+              "titulo": "Seja parceiro",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "azul",
+              "link": "#lp-parceiros"
+            },
+            {
+              "titulo": "Contato",
+              "texto": "",
+              "destaque": "",
+              "img": "",
+              "cor": "laranja",
+              "link": "#lp-contato"
+            }
+          ]
+        }
+      ]
+    },
+    "vitrine": {
+      "ativa": true,
+      "canto": "15 · Rodapé",
+      "sigla": "MC",
+      "menu": "Quem somos, Soluções, Missões, Contato",
+      "titulo": "Concreto de prático, concreto de quem faz",
+      "texto": "Links de soluções, acessos, pessoas e política de privacidade do Mundo Concreto.",
+      "botao1": "Falar com a equipe",
+      "botao2": "Política de privacidade",
+      "rodape": "mundoconcreto.net",
+      "destaque": "#16a34a",
+      "corTexto": "#111827",
+      "suave": "rgba(0,0,0,.12)",
+      "mini": [
+        {
+          "tipo": "icone",
+          "titulo": "Soluções",
+          "texto": "ERP, consultorias, PDE, missões, treinamentos e podcast.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "6",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "icone",
+          "titulo": "Acessos",
+          "texto": "GC APP, Plataforma de Membros, Seja parceiro e Contato.",
+          "img": "",
+          "imgs": "",
+          "fundo": "",
+          "destaque": "→",
+          "ajuste": "cobrir"
+        },
+        {
+          "tipo": "logo",
+          "titulo": "© Mundo Concreto",
+          "texto": "ERP GC APP por Gestão Concreta.",
+          "img": "/mc/marca/logo-mundo-concreto-horizontal-branco.png",
+          "imgs": "",
+          "fundo": "#1f2937",
+          "destaque": "",
+          "ajuste": "cobrir"
+        }
+      ]
+    }
+  }
+]
